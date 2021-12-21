@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>
+    Jeez Syed
+    </title>
+    <link rel="stylesheet" href="corestyle.css" />
+</head>
+<body>
+    <canvas id="canvas" width="2040" height="900"></canvas>
+    <script src="MnSprites/spMain.js"></script>
+    <script src="MnSprites/pad.js"></script>
+    <script src="Classes/acceleration.js"></script>
+    <script src="Classes/collision.js"></script>
+    <script src="Classes/keycode.js"></script>
+    <script src="Classes/vector.js"></script>
+    <script src="EnmSpr/enm1.js"></script>
+    <script src="Classes/mngradient.js"></script> 
+    <!-- gradient is not yet implemented -->
+
+    <script>
+        //as pg loads
+        window.onload = function () {
+            //create a reference to the canvas
+            var canvas = document.getElementById('canvas'),
+                //access the 2D drawing API
+                context = canvas.getContext('2d'),
+                //new instance of the Mainspr class
+                jet = new Mainspr(),
+                enem = new enemy(),
+                //create a new acceleration object
+                acceleraton = new Accelerate(0),
+                //new instance of the landing pad class
+                pad = new Pad(),
+                //create a new instance of the collision detection class
+                collision = new Collision();
+
+            //function to handle keyboard events
+            function KeyboardEventHandler(event) {
+
+                //↑
+                if (event.keyCode == keycode.UP) {
+                    acceleraton.VThrust(.1);
+                }
+                //←
+                if (event.keyCode == keycode.LEFT) {
+                    acceleraton.HThrust(.1);
+
+                }
+                //→
+                if (event.keyCode == keycode.RIGHT) {
+                    acceleraton.HThrust(-.1);
+
+                }
+                //↓
+                if (event.keyCode == keycode.DOWN) {
+                    acceleraton.Halt();
+
+                }
+            }
+
+            //listener for keydown event
+            window.addEventListener('keydown', KeyboardEventHandler, false);
+            function gradient(){
+
+            }
+
+            (function drawFrame() {
+                //clear the canvas for the new frame
+                // var gradient = context.createLinearGradient(0, 0, 170, 0);
+                // gradient.addColorStop("0", "magenta");
+                // gradient.addColorStop("0.5", "blue");
+                // gradient.addColorStop("1.0", "red");
+                // context.strokeStyle = gradient;
+                // context.lineWidth = 3;
+                context.clearRect(0, 0, canvas.width, canvas.height);
+
+
+
+                context.font = "bold 30px Helvetica, Arial, sans-serif";
+                context.fillText("Your score!", 1750, 30);
+                /*context.strokeRect(20, 20, 150, 100);*/
+               /* context.clearRect(0, 0, canvas.width, canvas.height);*/
+                //draws jet
+                jet.draw(context);
+
+                enem.draw(context);
+                
+                //move the Mainspr
+                jet.move();
+                //acceleration
+                jet.accelerate(acceleraton);
+                //get the next animation frame
+                window.requestAnimationFrame(drawFrame);
+            })();
+        }
+    </script>
+</body>
+</html>
