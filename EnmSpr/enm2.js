@@ -3,8 +3,8 @@ function enemy2() {
     //initialisation code will go here
 
     //create private variables for the x and y coordinates
-    var x = 750,//(left right) smaller the number, the closer to left bounds, and the larger, more closer to right bounds
-        y = 200, //(up down) smaller the number, the closer to bottom bounds, and the larger, more closer to upper bounds
+    var x = 650,//(left right) smaller the number, the closer to left bounds, and the larger, more closer to right bounds
+        y = 300, //(up down) smaller the number, the closer to bottom bounds, and the larger, more closer to upper bounds
         vx = 0,
         vy = 0;
 
