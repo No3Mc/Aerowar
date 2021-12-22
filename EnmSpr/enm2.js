@@ -1,4 +1,4 @@
-﻿//enemy 1
+﻿//enemy 2
 function enemy2() {
     //initialisation code will go here
 
