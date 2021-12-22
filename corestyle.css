@@ -5,9 +5,9 @@
 }
 
 #canvas {
-    border: 4px solid black;
+    border: 4px solid rgba(255, 0, 0, 0.308);
     /*position: absolute;*/
     width: 100%;
     height: 100%;
-    background-color: rgb(156, 81, 81);
+    background-color: rgb(61, 5, 5);
 }
