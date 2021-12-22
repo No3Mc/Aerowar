@@ -24,7 +24,7 @@ function Mainspr() {
          //Starting point
         context.moveTo(0, -40);
 
-        context.fillStyle = '#FFA500';
+        context.fillStyle = 'rgb(0, 0, 0)';
 
         context.lineTo(-15, -25);
         context.lineTo(-15, -20);
