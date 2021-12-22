@@ -90,6 +90,7 @@ function enemy2() {
     }
 
 
+
 }
 
 
