@@ -1,4 +1,8 @@
 ﻿body {
+    width: 99.5%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
     /* hide scrollbars */
     overflow: hidden;
     background-color: rgb(176,176,176);
