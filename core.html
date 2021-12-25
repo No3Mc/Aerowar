@@ -38,10 +38,8 @@
                 pad = new Pad(),
                 //create a new instance of the collision detection class
                 collision = new Collision();
-
             //function to handle keyboard events
             function KeyboardEventHandler(event) {
-
                 //↑
                 if (event.keyCode == keycode.UP) {
                     acceleraton.VThrust(.1);
@@ -49,28 +47,21 @@
                 //←
                 if (event.keyCode == keycode.LEFT) {
                     acceleraton.HThrust(.1);
-
                 }
                 //→
                 if (event.keyCode == keycode.RIGHT) {
                     acceleraton.HThrust(-.1);
-
                 }
                 //↓
                 if (event.keyCode == keycode.DOWN) {
                     acceleraton.Halt();
-
                 }
             }
-
             //listener for keydown event
             window.addEventListener('keydown', KeyboardEventHandler, false);
-            
             //need to add the sty.js 
             function gradient(){
-
             }
-
             (function drawFrame() {
                 //clear the canvas for the new frame
                 // var gradient = context.createLinearGradient(0, 0, 170, 0);
@@ -80,9 +71,6 @@
                 // context.strokeStyle = gradient;
                 // context.lineWidth = 3;
                 context.clearRect(0, 0, canvas.width, canvas.height);
-
-
-
                 context.font = "bold 30px Helvetica, Arial, sans-serif";
                 context.fillText("Your fking score!", 1750, 30);
                 /*context.strokeRect(20, 20, 150, 100);*/
@@ -93,7 +81,6 @@
                 enem.draw(context);
                 //draws enem 2
                 enem2.draw(context);
-                
                 // enem.move(context);
                 //move the Mainspr
                 jet.move();
