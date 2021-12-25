@@ -71,18 +71,12 @@ function Mainspr() {
         //restore the state of the context to what it was before our drawing
         context.restore();
     }
-
-
-
     Mainspr.prototype.move = function () {
         //change the x axis by the x velocity
         x += vx;
         //change the y axis by the y velocity
         y += vy;
     }
-
-  
-
     //public method to set the vector of the Mainspr
     Mainspr.prototype.accelerate = function (Acceleration) {
         //set vx
@@ -94,7 +88,6 @@ function Mainspr() {
         vx = -vx
         }
     }
-
     //create a public property called Top
     Object.defineProperty(this, 'Top',
         {
@@ -105,7 +98,6 @@ function Mainspr() {
             }
         }
     )
-
     //create a public property called Bottom
     Object.defineProperty(this, 'Bottom',
         {
@@ -117,7 +109,6 @@ function Mainspr() {
             }
         }
     )
-
     //create a public property called Left
     Object.defineProperty(this, 'Left',
         {
@@ -128,7 +119,6 @@ function Mainspr() {
             }
         }
     )
-
     //create a public property called Right
     Object.defineProperty(this, 'Right',
         {
@@ -139,7 +129,6 @@ function Mainspr() {
             }
         }
     )
-
     Mainspr.prototype.halt = function () {
         //temp variable to store the vy
         var temp = vy;
