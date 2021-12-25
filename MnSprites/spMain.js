@@ -8,7 +8,6 @@ function Mainspr() {
         y = 750, //(up down) smaller the number, the closer to bottom bounds, and the larger, more closer to upper bounds
         vx = 0,
         vy = 0;
-
     //create the draw function to give us the draw method
     //it accepts one parameter which is the context from the canvas it is drawn on
     Mainspr.prototype.draw = function (context) {
