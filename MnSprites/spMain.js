@@ -63,14 +63,11 @@ function Mainspr() {
         context.lineTo(15, -20);
         context.lineTo(15, -25);
         context.lineTo(0, -40);
-
         //close the path
         context.closePath();
         context.fill();
         //go ahead and draw the line
         context.stroke();
-
-
         //restore the state of the context to what it was before our drawing
         context.restore();
     }
