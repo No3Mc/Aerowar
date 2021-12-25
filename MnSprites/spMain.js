@@ -108,7 +108,7 @@ function Mainspr() {
         //set vy
         vy += Acceleration.AY;
 
-        if (x  > innerWidth || x < 0){
+        if (x  > outerWidth || x < 0){
         vx = -vx
         }
     }
