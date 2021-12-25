@@ -16,25 +16,17 @@ function Mainspr() {
         //set the coordinates of the drawing area of the new shape to x and y
         context.translate(x, y);
         //start the line (path)
-        
         context.beginPath();
-
-
          //Starting point
         context.moveTo(0, -40);
-
         context.fillStyle = 'rgb(0, 0, 0)';
-
         context.lineTo(-15, -25);
         context.lineTo(-15, -20);
         context.lineTo(-18, -20)
-
         context.lineTo(-50, -5)
-
 
         context.lineTo(-60, 10)
         context.lineTo(-40, 5)
-
         context.lineTo(-15, 12)
         context.lineTo(-15, 15)
         context.lineTo(-25, 22)
@@ -49,7 +41,6 @@ function Mainspr() {
         context.lineTo(-10, 25)
         context.lineTo(-10, 26)
         
-
         context.lineTo(0, 30)
         context.lineTo(10, 26)
         context.lineTo(10, 25)
@@ -64,19 +55,14 @@ function Mainspr() {
         context.lineTo(25, 22)
         context.lineTo(15, 15)
         context.lineTo(15, 12)
-
         context.lineTo(40, 5)
         context.lineTo(60, 10)
-
 
         context.lineTo(50, -5)
         context.lineTo(18, -20)
         context.lineTo(15, -20);
         context.lineTo(15, -25);
-
         context.lineTo(0, -40);
-
-
 
         //close the path
         context.closePath();
