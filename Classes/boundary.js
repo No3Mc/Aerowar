@@ -1,19 +1,19 @@
 function boundz() {
 
-    Mainspr.prototype.draw = function (context) {
-        //save the state of the drawing context before we change it
-        context.save();
-        //set the coordinates of the drawing area of the new shape to x and y
-        context.translate(x, y);
-        //start the line (path)
+    boundz.prototype.draw = function (context) {
+    //save the state of the drawing context before we change it
+    context.save();
+    //set the coordinates of the drawing area of the new shape to x and y
+    context.translate(x, y);
+    //start the line (path)
         
-        context.beginPath();
+    context.beginPath();
 
 
          //Starting point
-        context.moveTo(0, -40);
+    context.moveTo(0, -40);
 
-        context.fillStyle = 'rgb(0, 0, 0)';
+    context.fillStyle = 'rgb(0, 0, 0)';
     context.moveTo(0, -40);
 
     context.fillStyle = 'rgb(0, 0, 0)';
