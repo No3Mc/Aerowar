@@ -107,6 +107,10 @@ function Mainspr() {
         vx += Acceleration.AX;
         //set vy
         vy += Acceleration.AY;
+
+        if (x  > innerWidth || x < 0){
+        vx = -vx
+        }
     }
 
     //create a public property called Top
