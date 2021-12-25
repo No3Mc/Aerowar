@@ -89,7 +89,7 @@ function enemy2() {
         context.restore();
     }
 
-
+x+=1
 
 }
 
