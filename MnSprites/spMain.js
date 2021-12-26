@@ -84,9 +84,9 @@ function Mainspr() {
         //set vy
         vy += Acceleration.AY;
 
-        if (x  > outerWidth || x < 0){
-        vx = -vx
-        }
+        // if (x  > outerWidth || x < 0){
+        // vx = -vx
+        // }
     }
     //create a public property called Top
     Object.defineProperty(this, 'Top',
