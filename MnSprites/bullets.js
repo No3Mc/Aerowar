@@ -7,8 +7,8 @@ function bullets() {
     var x = 200,
         y = 200,
         vx = 0,
-        vy = 0;
-        
+        vy = 0,
+        Boom = false;
 
 
     //create the draw function to give us the draw method
@@ -41,8 +41,7 @@ function bullets() {
         //go ahead and draw the line
         context.stroke();
 
-        DrawWindows(context);
-        DrawGlobes(context);
+
 
         //if the ship has blown up
         if (Boom == true) {
@@ -61,93 +60,8 @@ function bullets() {
     }
 
 
-    function DrawGlobes(context) {
-        //var to store the colour of the globe
-        var colour = "";
-        //if the value of GlobeYellow is less than 50
-        if (GlobeYellow < 50) {
-            //set the colour to yellow
-            colour = "#ffff00";
-        }
-        else {
-            //otherwise set it to red
-            colour = "#ff0000";
-        }
-        //middle landing globe
-        Globe(context, -14, 12, colour);
-        //right landing globe
-        Globe(context, 32, 12, colour);
-        //left landing globe
-        Globe(context, -63, 12, colour);
-        //increase the value of globe yellow (The larger the increment the faster the flashing effect)
-        GlobeYellow += 1;
-        //if globe yellow is more than 100 
-        if (GlobeYellow > 100) {
-            //set it back to 1
-            GlobeYellow = 1;
-        }
-    }
 
-
-    function DrawWindows(context) {
-        //var for the offset of the window to be drawn
-        var XOffset = -20,
-            //var for loop counter to indicate which window we are drawing
-            WindowNo = 1,
-            //var to store the colour to use
-            Colour = "";
-        //loop through each window
-        while (WindowNo != 6) {
-            //if the red window is being drawn then set the colour to red
-            if (WindowNo == RedWindow) {
-                //set colour to red
-                Colour = "#ff0000";
-            }
-            else {
-                //set colour to white
-                Colour = "#ffffff";
-            }
-            //draw the window
-            Window(context, XOffset, -12, Colour);
-            //point at the next window
-            WindowNo++;
-            //work out the position of the next window
-            XOffset = XOffset + 10;
-        }
-        //chage the red window to the next one
-        RedWindow = RedWindow + .25;
-        //if the red window is 6 thats too many
-        if (RedWindow == 6) {
-            //set it back to 1
-            RedWindow = 1;
-        }
-    }
-
-    function Window(context, xposn, yposn, colour) {
-        context.beginPath();
-        context.fillStyle = colour;
-        //x, y, radius, start_angle, end_angle, anti-clockwise
-        context.arc(xposn, yposn, 3, 0, (Math.PI * 2));
-        context.fill();
-        context.stroke();
-    }
-
-    function Globe(context, xposn, yposn, colour) {
-        //begin the path
-        context.beginPath();
-        //set the fill colour
-        context.fillStyle = colour;
-        //move to the position to start the globe
-        context.moveTo(xposn, yposn);
-        //draw the curve from that position to +30px passing toward x+13, y+20
-        context.quadraticCurveTo(xposn + 13, yposn + 20, xposn + 30, yposn);
-        //fill the globe
-        context.fill();
-        //draw the globe
-        context.stroke();
-    }
-
-    Saucer.prototype.move = function ()
+    bullets.prototype.move = function ()
     {
         //change the x axis by the x velocity
         x += vx;
@@ -155,7 +69,7 @@ function bullets() {
         y += vy;
     }
 
-    Saucer.prototype.setVector = function(vector)
+    bullets.prototype.setVector = function(vector)
     {
         //set the vx value based on this vector
         vx = vector.VX;
@@ -164,7 +78,7 @@ function bullets() {
     }
 
     //public method to set the vector of the saucer
-    Saucer.prototype.accelerate = function (Acceleration) {
+    bullets.prototype.accelerate = function (Acceleration) {
         //set vx
         vx += Acceleration.AX;
         //set vy
@@ -215,7 +129,7 @@ function bullets() {
     }
     )
 
-    Saucer.prototype.halt = function ()
+    bullets.prototype.halt = function ()
     {
         //temp variable to store the vy
         var temp = vy;
