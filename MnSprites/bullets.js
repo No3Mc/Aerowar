@@ -8,6 +8,7 @@ function bullets() {
         y = 200,
         vx = 0,
         vy = 0;
+        
 
 
     //create the draw function to give us the draw method
