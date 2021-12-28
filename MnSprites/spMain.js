@@ -91,10 +91,12 @@ function Mainspr() {
 
 
     Mainspr.prototype.move = function () {
-        //change the x axis by the x velocity
+        // change the x axis by the x velocity
         x += vx;
         //change the y axis by the y velocity
         y += vy;
+
+
     }
     //public method to set the vector of the Mainspr
     Mainspr.prototype.accelerate = function (Acceleration) {
