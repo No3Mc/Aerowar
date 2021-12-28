@@ -29,10 +29,6 @@ function boundz() {
     context.restore();
 
     }
- function crash(){
- if (Mainspr.x > boundz){
-      
- }
- }
+
 
 }
