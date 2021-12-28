@@ -30,7 +30,9 @@ function boundz() {
 
     }
  function crash(){
-
+ if (Mainspr.x > boundz){
+      
+ }
  }
 
 }
