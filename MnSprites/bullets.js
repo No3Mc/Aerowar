@@ -21,20 +21,11 @@ function bullets() {
         //start the line (path)
         context.beginPath();
         context.fillStyle = "#d3d3d3";
-        context.moveTo(30, 12);
-        context.lineTo(80, 12);
-        context.lineTo(80, 10);
-        context.lineTo(70, 0);
-        context.lineTo(30, -10);
-        context.lineTo(23, -20);
-        context.lineTo(-23, -20);
-        context.lineTo(-30, -10);
-        context.lineTo(-70, 0);
-        context.lineTo(-80, 10);
-        context.lineTo(-80, 12);
-        context.lineTo(-30, 12);
-        context.lineTo(-30, 20);
-        context.lineTo(30, 20);
+        context.lineTo(-20, -40);
+        context.lineTo(40, -20);
+        context.lineTo(20, -40);
+        context.lineTo(20, -40);
+
         //close the path
         context.closePath();
         context.fill();
