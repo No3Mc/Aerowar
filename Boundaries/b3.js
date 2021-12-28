@@ -2,7 +2,7 @@
 //create the constructor for the class saucer
 function bound3() {
     //initialisation code will go here
-
+    // this is the right bound
     //create private variables for the x and y coordinates
     var x = 1500,
         y = 450,
