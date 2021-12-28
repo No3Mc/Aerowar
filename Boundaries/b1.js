@@ -5,8 +5,8 @@ function bound1() {
 
     //create private variables for the x and y coordinates
     var x = 600,
-    // change the y to see
-        y = 400,
+    // add in y to see changes
+        y = 450,
         vx = 0,
         vy = 0,
         Boom = false;
