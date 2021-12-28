@@ -29,6 +29,8 @@ function boundz() {
     context.restore();
 
     }
+ function crash(){
 
+ }
 
 }
