@@ -11,8 +11,6 @@
     <canvas id="canvas" width="2040" height="900"></canvas>
     <script src="Classes/sty.js"></script> 
     <script src="MnSprites/spMain.js"></script>
-    <script src="MnSprites/bullets.js"></script>
-
 
     <script src="Classes/keycode.js"></script>
     <script src="Classes/vector.js"></script>
@@ -20,10 +18,9 @@
 
     <script src="EnmSpr/enm1.js"></script>
     <script src="enmspr/enm2.js"></script>
-
+    <script src="EnmSpr/bullets.js"></script>
 
     <script src="Classes/collision.js"></script>
-    <script src="mnsprites/bullets.js"></script>
     <script src="boundaries/b1.js"></script>
     <script src="boundaries/b2.js"></script>
     <script src="boundaries/b3.js"></script>
@@ -41,13 +38,11 @@
                 enem = new enemy(),
                 enem2 = new enemy2(),
                 bullet = new bullets(),
-                // bound = new boundz(),
                 b1 = new bound1(),
                 b2 = new bound2(),
                 b3 = new bound3(),
                 //create a new acceleration object
                 acceleraton = new Accelerate(0),
-
                 //create a new instance of the collision detection class
                 collision = new Collision();
             //function to handle keyboard events
@@ -102,7 +97,7 @@
                 //move the Mainspr
                 jet.move();
                 bullet.move();
-
+                b1.move();  
                 // bullet.accelerate();
                 //acceleration
                 jet.accelerate(acceleraton);
