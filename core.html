@@ -99,8 +99,9 @@
                 window.requestAnimationFrame(drawFrame);
 
 
-                if (collision.Overlapping(jet, bound)) {
+                if (collision.Overlapping(jet, bullet)) {
                     //halt the ship
+                    alert("collision")
                     jet.halt()
                 }
 
