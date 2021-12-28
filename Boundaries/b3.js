@@ -1,5 +1,5 @@
 function bound3() {
-
+    var Boom = false;
     bound3.prototype.draw = function (context) {
     //save the state of the drawing context before we change it
     context.save();
@@ -16,9 +16,11 @@ function bound3() {
     // context.fillStyle = 'rgb(0, 0, 0)';
     // context.moveTo(0, -40);
 
-    // context.fillStyle = 'rgb(0, 0, 0)';
-    context.moveTo(2040,900)
-    context.lineTo(2040, 0);
+    
+    context.moveTo(0,0)
+    context.lineTo(0, 900);
+
+
     context.closePath();
     context.stroke();
     //go ahead and draw the line
@@ -27,6 +29,17 @@ function bound3() {
     context.restore();
 
     }
-
+    bound3.prototype.halt = function ()
+    {
+        //temp variable to store the vy
+        var temp = vy;
+        //kill all velocity
+        vx = 0;
+        vy = 0;
+        //set the ship as exploding
+        if (temp > .4) {
+            Boom = true;
+        }
+    }
 
 }
