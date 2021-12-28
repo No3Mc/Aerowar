@@ -4,8 +4,8 @@ function bound1() {
     //initialisation code will go here
 
     //create private variables for the x and y coordinates
-    var x = 200,
-        y = 200,
+    var x = 0,
+        y = 1000,
         vx = 0,
         vy = 0,
         Boom = false;
@@ -20,9 +20,9 @@ function bound1() {
         context.translate(x, y);
         //start the line (path)
         context.beginPath();
-        context.fillStyle = "#d3d3d3";
-        context.lineTo(-120, -140);
-        context.lineTo(140, -220);
+        
+        context.lineTo(-500, -540);
+        context.lineTo(140, -120);
         context.lineTo(120, -140);
         context.lineTo(120, -140);
 
