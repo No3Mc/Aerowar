@@ -117,7 +117,6 @@ function Mainspr() {
         if (y > 840){
             vy = -vy
         }
-
     }
     //create a public property called Top
     Object.defineProperty(this, 'Top',
