@@ -10,16 +10,17 @@
 <body>
     <canvas id="canvas" width="2040" height="900"></canvas>
     <script src="Classes/sty.js"></script> 
+    <!-- main shooting sprite -->
     <script src="MnSprites/spMain.js"></script>
-
+    <!-- main bg -->
     <script src="Classes/keycode.js"></script>
     <script src="Classes/vector.js"></script>
     <script src="Classes/acceleration.js"></script>
-
+    <!-- secondary sprites -->
     <script src="EnmSpr/enm1.js"></script>
     <script src="enmspr/enm2.js"></script>
     <script src="EnmSpr/bullets.js"></script>
-
+    <!-- related to collision  -->
     <script src="Classes/collision.js"></script>
     <script src="boundaries/b1.js"></script>
     <script src="boundaries/b2.js"></script>
@@ -65,7 +66,8 @@
                 }
             }
             //listener for keydown event
-            window.addEventListener('keydown', KeyboardEventHandler, false);
+            window.addEventListener('keyup', KeyboardEventHandler, false);
+            // window.addEventListener('keyup', KeyboardEventHandler, true);
             //need to add the sty.js 
             function gradient(){
 
@@ -87,7 +89,6 @@
                 jet.draw(context);
                 //draws enemy 1
                 enem.draw(context);
-                
                 //draws enem 2
                 enem2.draw(context);
                 bullet.draw(context);
@@ -105,7 +106,7 @@
                 window.requestAnimationFrame(drawFrame);
 
 
-                if (collision.Overlapping(jet, b1)) {
+                if (collision.Overlapping(jet, bullet)) {
                     //halt the ship
                     alert("collision")
                     jet.halt()
