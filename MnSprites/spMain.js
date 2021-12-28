@@ -8,7 +8,7 @@ function Mainspr() {
         y = 750, //(up down) smaller the number, the closer to bottom bounds, and the larger, more closer to upper bounds
         vx = 0,
         vy = 0,
-        Boom = true;
+        Boom = false;
     //create the draw function to give us the draw method
     //it accepts one parameter which is the context from the canvas it is drawn on
     Mainspr.prototype.draw = function (context) {
@@ -73,15 +73,14 @@ function Mainspr() {
 
 
         //if the ship has blown up
-        // if (Boom == true) {
-        //     //create a new instance of an image
-        //     var img = new Image();
-        //     //get the bitmap source
-        //     img.src = "boom.png";
-        //     //draw the image on the context
-        //     context.drawImage(img, -100, -60);
-        // }
-
+        if (Boom == true) {
+            //create a new instance of an image
+            var img = new Image();
+            //get the bitmap source
+            img.src = "boom.png";
+            //draw the image on the context
+            context.drawImage(img, -100, -60);
+        }
 
 
 
@@ -149,5 +148,20 @@ function Mainspr() {
             }
         }
     )
+
+    Mainspr.prototype.halt = function ()
+    {
+        //temp variable to store the vy
+        var temp = vy;
+        //kill all velocity
+        vx = 0;
+        vy = 0;
+        //set the ship as exploding
+        if (temp > .4) {
+            Boom = true;
+        }
+    }
+
+
 
 }
