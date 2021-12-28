@@ -105,16 +105,16 @@ function Mainspr() {
         //set vy
         vy += Acceleration.AY;
 
-        if (x < 0){
+        if (x < 100){
         vx = -vx
         }
-        if (x > 1970){
+        if (x > 1940){
             vx = -vx
         }
-        if (y < 80){
+        if (y < 90){
             vy = -vy
         }
-        if (y > 840){
+        if (y > 830){
             vy = -vy
         }
     }
