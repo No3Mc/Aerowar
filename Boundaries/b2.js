@@ -4,7 +4,8 @@ function bound2() {
     //initialisation code will go here
 
     //create private variables for the x and y coordinates
-    var x = -400,
+    var x = -450,
+    // add in x to see the changes
         y = 450,
         vx = 0,
         vy = 0,
