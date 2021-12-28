@@ -73,14 +73,14 @@ function Mainspr() {
 
 
         //if the ship has blown up
-        if (Boom == true) {
-            //create a new instance of an image
-            var img = new Image();
-            //get the bitmap source
-            img.src = "boom.png";
-            //draw the image on the context
-            context.drawImage(img, -100, -60);
-        }
+        // if (Boom == true) {
+        //     //create a new instance of an image
+        //     var img = new Image();
+        //     //get the bitmap source
+        //     img.src = "boom.png";
+        //     //draw the image on the context
+        //     context.drawImage(img, -100, -60);
+        // }
 
 
 
@@ -149,17 +149,5 @@ function Mainspr() {
             }
         }
     )
-    bullets.prototype.halt = function ()
-    {
-        //temp variable to store the vy
-        var temp = vy;
-        //kill all velocity
-        vx = 0;
-        vy = 0;
-        //set the ship as exploding
-        if (temp > .4) {
-            Boom = true;
-        }
 
-    }
 }
