@@ -96,6 +96,14 @@
                 jet.accelerate(acceleraton);
                 //get the next animation frame
                 window.requestAnimationFrame(drawFrame);
+
+
+                if (collision.Overlapping(jet, bound)) {
+                    //halt the ship
+                    jet.halt()
+                }
+
+
             })();
         }
     </script>
