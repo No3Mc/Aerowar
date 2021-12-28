@@ -4,8 +4,8 @@ function bullets() {
     //initialisation code will go here
 
     //create private variables for the x and y coordinates
-    var x = 200,
-        y = 200,
+    var x = 950,//on the top
+        y = 700,//on the left
         vx = 0,
         vy = 0,
         Boom = false;
@@ -20,11 +20,10 @@ function bullets() {
         context.translate(x, y);
         //start the line (path)
         context.beginPath();
-        context.fillStyle = "#d3d3d3";
-        context.lineTo(-20, -40);
-        context.lineTo(40, -20);
-        context.lineTo(20, -40);
-        context.lineTo(20, -40);
+        context.fillStyle = "red";
+        context.moveTo(- 13, 12);
+        context.quadraticCurveTo(0, 20, 13, 12);
+
 
         //close the path
         context.closePath();
@@ -120,16 +119,5 @@ function bullets() {
     }
     )
 
-    bullets.prototype.halt = function ()
-    {
-        //temp variable to store the vy
-        var temp = vy;
-        //kill all velocity
-        vx = 0;
-        vy = 0;
-        //set the ship as exploding
-        if (temp > .4) {
-            Boom = true;
-        }
-    }
+
 }
