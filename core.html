@@ -48,7 +48,7 @@
                 b3 = new bound3(),
                 b4 = new bound4(),
 
-                str = new Star(),
+
                 //create a new acceleration object
                 acceleraton = new Accelerate(0),
                 //create a new instance of the collision detection class
@@ -104,12 +104,12 @@
                 b4.draw(context);
 
 
-                str.draw(context);
-                str.move();
+
                 //move the Mainspr
                 jet.move();
                 bullet.move();
-                b1.move();  
+                  
+                enem.move();
                 // bullet.accelerate();
                 //acceleration
                 jet.accelerate(acceleraton);
