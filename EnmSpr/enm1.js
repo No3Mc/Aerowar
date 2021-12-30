@@ -190,11 +190,8 @@ function enemy() {
         enemy.prototype.move = function () {
             //change the x axis
             this.x -= .1;
-            //if the star has drifted off the left of the canvas
             if (this.x < 0) {
-                //place it at the right of the canvas
                 this.x = 400;
-                //set the y value to a random position
                 this.y = Math.random() * 200;
             }
         }
