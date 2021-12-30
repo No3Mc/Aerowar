@@ -189,10 +189,23 @@ function enemy() {
     
         enemy.prototype.move = function () {
             //change the x axis
-            this.x -= .1;
-            if (this.x < 0) {
-                this.x = 400;
-                this.y = Math.random() * 200;
+            this.x -= 4;
+            this.y -= 4;
+            if (this.x < 100) {
+                this.x = 800;
+                this.y = Math.random() * 600;
+            }
+            if (this.x > 1940) {
+                this.x = 800;
+                this.y = Math.random() * 600;
+            }
+            if (this.y < 90) {
+                this.y = 800;
+                this.x = Math.random() * 600;
+            }
+            if (this.y > 830) {
+                this.y = 800;
+                this.x = Math.random() * 600;
             }
         }
     }
