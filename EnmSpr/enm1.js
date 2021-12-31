@@ -2,6 +2,7 @@
 
 //create the constructor for the class square
 function enemy() {
+    
         //initialisation code will go here
          var rotation = 0;
          
