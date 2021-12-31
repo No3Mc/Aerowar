@@ -47,10 +47,10 @@
                 b2 = new bound2(),
                 b3 = new bound3(),
                 b4 = new bound4(),
-
-                arrow = new Arrow(),
-                arrow.X = 300;
-                arrow.Y = 300;
+                
+                test = new Arrow(),
+                
+                
                 //create a new acceleration object
                 acceleraton = new Accelerate(0),
                 //create a new instance of the collision detection class
@@ -78,7 +78,8 @@
             window.addEventListener('keydown', KeyboardEventHandler, false);
             // window.addEventListener('keyup', KeyboardEventHandler, false);
             //need to add the sty.js 
-
+            test.X = 300;
+            test.Y = 300;
         
             (function drawFrame() {
                 //clear the canvas for the new frame
@@ -121,6 +122,13 @@
                 //get the next animation frame
                 window.requestAnimationFrame(drawFrame);
 
+
+                //calculate the difference between the box x position and the arrow x position
+                var dx = jet.X - test.X;
+                //calculate the difference between the box y position and the arrow y position
+                var dy = jet.Y - test.Y;
+                //set the angle of rotation for the arrow
+                arrow.Rotation = Math.atan2(dy, dx);
 
                 // if (collision.Overlapping(jet, b1)) {
                 //     //halt the ship
