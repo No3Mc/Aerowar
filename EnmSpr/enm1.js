@@ -18,6 +18,7 @@ function enemy() {
             context.fillStyle = "#FFFFFF";
             //set the coordinates of the drawing area of the new shape to x and y
             context.translate(this.x, this.y);
+            context.rotate(rotation);
             //start the line (path)
             context.beginPath();
         //     context.moveTo(-size, size);
@@ -121,10 +122,10 @@ function enemy() {
     Object.defineProperty(this, 'X',
     {
     get: function () {
-        return x;
+        return this.x;
     },
     set: function (value) {
-        x = value;
+        this.x = value;
     }
     }
     )
@@ -133,10 +134,10 @@ function enemy() {
     Object.defineProperty(this, 'Y',
     {
         get: function () {
-            return y;
+            return this.y;
         },
         set: function (value) {
-            y = value;
+            this.y = value;
         }
     }
     )
