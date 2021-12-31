@@ -86,14 +86,15 @@ function enemy2() {
             context.fill();
             //go ahead and draw the line
             context.stroke();
-            //restore the state of the context to what it was before our drawing
+            //restore the state of the context 
+            to what it was before our drawing
             context.restore();
         }
     
         enemy2.prototype.move = function () {
             //change the x axis
-            this.x -= 4;
-            // this.y -= 4;
+        //     this.x -= 4;
+            this.y -= 4;
             if (this.x < 100) {
                 this.x = 800;
                 this.y = Math.random() * 600;
