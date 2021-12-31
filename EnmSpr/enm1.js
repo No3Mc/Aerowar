@@ -208,5 +208,19 @@ function enemy() {
                 this.x = Math.random() * 600;
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     }
     
