@@ -80,8 +80,7 @@
             //need to add the sty.js 
             test.X = 300;
             test.Y = 300;
-            enem.Y = 80;
-            enem.X = 80;
+
 
 
             (function drawFrame() {
@@ -138,7 +137,7 @@
                 //calculate the difference between the box y position and the arrow y position
                 var dy = jet.Y - test.Y;
                 //set the angle of rotation for the arrow
-                arrow.Rotation = Math.atan2(dy, dx);
+                test.Rotation = Math.atan2(dy, dx);
 
                 // if (collision.Overlapping(jet, b1)) {
                 //     //halt the ship
