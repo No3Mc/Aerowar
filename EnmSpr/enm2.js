@@ -1,26 +1,29 @@
-﻿//enemy 2
+﻿//create the constructor for the class square
 function enemy2() {
-    //initialisation code will go here
+        //initialisation code will go here
+    
+        //create private variables for the x and y coordinates
+        this.x = Math.random() * -1800;
+        this.y = Math.random() * 400;
+        //set the size of the star
+        var size = 70;
+    
+        enemy2.prototype.draw = function (context) {
+            //save the state of the drawing context before we change it
+            context.save();
+            context.fillStyle = "#FFFFFF";
+            //set the coordinates of the drawing area of the new shape to x and y
+            context.translate(this.x, this.y);
+            //start the line (path)
+            context.beginPath();
+        //     context.moveTo(-size, size);
+        //     context.lineTo(size, size);
+        //     context.lineTo(size, -size);
+        //     context.lineTo(size, -size);
+        //     context.lineTo(-size, -size);
 
-    //create private variables for the x and y coordinates
-    var x = 650,//(left right) smaller the number, the closer to left bounds, and the larger, more closer to right bounds
-        y = 300, //(up down) smaller the number, the closer to bottom bounds, and the larger, more closer to upper bounds
-        vx = 0,
-        vy = 0;
-
-    //create the draw function to give us the draw method
-    //it accepts one parameter which is the context from the canvas it is drawn on
-    enemy2.prototype.draw = function (context) {
-        //save the state of the drawing context before we change it
-        context.save();
-        //set the coordinates of the drawing area of the new shape to x and y
-        context.translate(x, y);
-        //start the line (path)
-        
-        context.beginPath();
 
 
-         //Starting point
         context.moveTo(0, 40);
 
         context.fillStyle = '#FFA500';
@@ -77,20 +80,36 @@ function enemy2() {
         context.lineTo(0, 40);
 
 
-
-        //close the path
-        context.closePath();
-        context.fill();
-        //go ahead and draw the line
-        context.stroke();
-
-
-        //restore the state of the context to what it was before our drawing
-        context.restore();
+            //context.lineTo(0, 0);
+            //close the path
+            context.closePath();
+            context.fill();
+            //go ahead and draw the line
+            context.stroke();
+            //restore the state of the context to what it was before our drawing
+            context.restore();
+        }
+    
+        enemy2.prototype.move = function () {
+            //change the x axis
+            this.x -= 4;
+            // this.y -= 4;
+            if (this.x < 100) {
+                this.x = 800;
+                this.y = Math.random() * 600;
+            }
+            if (this.x > 1940) {
+                this.x = 800;
+                this.y = Math.random() * 600;
+            }
+            if (this.y < 90) {
+                this.y = 800;
+                this.x = Math.random() * 600;
+            }
+            if (this.y > 830) {
+                this.y = 800;
+                this.x = Math.random() * 600;
+            }
+        }
     }
-
-x+=1
-
-}
-
-
+    
