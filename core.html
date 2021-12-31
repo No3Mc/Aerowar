@@ -78,6 +78,9 @@
             window.addEventListener('keydown', KeyboardEventHandler, false);
             // window.addEventListener('keyup', KeyboardEventHandler, false);
             //need to add the sty.js 
+            
+            
+            // testing sprite tracking
             test.X = 300;
             test.Y = 300;
 
@@ -133,11 +136,11 @@
 
 
                 //calculate the difference between the box x position and the arrow x position
-                var dx = jet.X - test.X;
+                var dx = jet.X - enem.X;
                 //calculate the difference between the box y position and the arrow y position
-                var dy = jet.Y - test.Y;
+                var dy = jet.Y - enem.Y;
                 //set the angle of rotation for the arrow
-                test.Rotation = Math.atan2(dy, dx);
+                enem.Rotation = Math.atan2(dy, dx);
 
                 // if (collision.Overlapping(jet, b1)) {
                 //     //halt the ship
