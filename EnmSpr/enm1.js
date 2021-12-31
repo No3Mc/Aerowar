@@ -141,7 +141,16 @@ function enemy() {
     )
 
 
-
+    Object.defineProperty(this, 'Rotation',
+    {
+    get: function () {
+        return rotation;
+    },
+    set: function (value) {
+        rotation = value;
+    }
+    }
+    )
 
 
 
