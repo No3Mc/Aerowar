@@ -86,8 +86,7 @@ function enemy2() {
             context.fill();
             //go ahead and draw the line
             context.stroke();
-            //restore the state of the context 
-            to what it was before our drawing
+            //restore the state of the context to what it was before our drawing
             context.restore();
         }
     
