@@ -43,3 +43,102 @@
 //         }
 //     }
 // }
+
+
+
+//constructor for the arrow class
+function Arrow() {
+    //private data members
+    //x posn
+    var x = 0;
+    //y posn
+    var y = 0;
+    //colour of arrow
+    var color = "#ffff00";
+    //rotation
+    var rotation = 0;
+    //size
+    var size = 50;
+
+    //public property for size
+    Object.defineProperty(this, 'Size',
+    {
+    get: function () {
+        return size;
+    },
+    set: function (value) {
+        size = value;
+    }
+    }
+    )
+
+    //public property for rotation
+    Object.defineProperty(this, 'Rotation',
+    {
+    get: function () {
+        return rotation;
+    },
+    set: function (value) {
+        rotation = value;
+    }
+    }
+    )
+
+    //public property for X
+    Object.defineProperty(this, 'X',
+    {
+    get: function () {
+        return x;
+    },
+    set: function (value) {
+        x = value;
+    }
+    }
+    )
+
+    //public property for Y
+    Object.defineProperty(this, 'Y',
+    {
+        get: function () {
+            return y;
+        },
+        set: function (value) {
+            y = value;
+        }
+    }
+    )
+
+    //public draw method
+    Arrow.prototype.draw = function (context) {
+        //save the context
+        context.save();
+        //set x and y posn
+        context.translate(x, y);
+        //rotate the context
+        context.rotate(rotation);
+        //set the line width
+        context.lineWidth = 2;
+        //set the colour
+        context.fillStyle = color;
+        //begin the path
+        context.beginPath();
+        //draw the arrow
+        context.moveTo(-size, -(size / 2));
+        context.lineTo(0, -(size / 2));
+        context.lineTo(0, -size);
+        context.lineTo(size, 0);
+        context.lineTo(0, size);
+        context.lineTo(0, (size / 2));
+        context.lineTo(-size, (size / 2));
+        context.lineTo(-size, -(size / 2));
+        context.closePath();
+        //fill the shape
+        context.fill();
+        //finish the path
+        context.stroke();
+        //restore the context
+        context.restore();
+    };
+
+}
+
