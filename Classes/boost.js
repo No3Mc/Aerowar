@@ -4,7 +4,7 @@ function Boost(){
         y = 800, //(up down) smaller the number, the closer to bottom bounds, and the larger, more closer to upper bounds
         vx = 0,
         vy = 0,
-        Boom = false;
+
     //create the draw function to give us the draw method
     //it accepts one parameter which is the context from the canvas it is drawn on
     Boost.prototype.draw = function (context) {
@@ -38,13 +38,4 @@ function Boost(){
     }
         //restore the state of the context to what it was before our drawing
         context.restore();
-}
-
-Boost.prototype.initiate = function () {
-    // change the x axis by the x velocity
-    // x += vx;
-    // //change the y axis by the y velocity
-    // y += vy;
-
-
 }
