@@ -97,7 +97,7 @@ function Mainspr() {
         //var to store the colour of the globe
         var colour = "";
         //if the value of GlobeYellow is less than 50
-        if (GlobeYellow < 50) {
+        if (GlobeYellow < 10) {
             //set the colour to yellow
             colour = "#ffff00";
         }
@@ -108,13 +108,13 @@ function Mainspr() {
         //middle landing globe
         // Globe(context, -14, 12, colour);
         //right landing globe
-        Globe(context, 49, 12, colour);
+        // Globe(context, 49, 12, colour);
         //left landing globe
-        Globe(context, -60, 12, colour);
+        Globe(context, -1, 0, colour);
         //increase the value of globe yellow (The larger the increment the faster the flashing effect)
         GlobeYellow += 1;
         //if globe yellow is more than 100 
-        if (GlobeYellow > 200) {
+        if (GlobeYellow > 50) {
             //set it back to 1
             GlobeYellow = 1;
         }
@@ -127,7 +127,7 @@ function Mainspr() {
         //move to the position to start the globe
         context.moveTo(xposn, yposn);
         //draw the curve from that position to +30px passing toward x+13, y+20
-        context.quadraticCurveTo(xposn + 7, yposn + 40, xposn + 10, yposn);
+        context.quadraticCurveTo(xposn + 5, yposn + 10, xposn + 10, yposn);
         //fill the globe
         context.fill();
         //draw the globe
