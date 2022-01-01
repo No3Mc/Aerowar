@@ -74,8 +74,9 @@
                     acceleraton.Halt();
                 }
                 if (event.keyCode == keycode.SPACE){
-                    bullet.move();
-                    
+
+                bullet.move();
+                console.log("hell")
                 }
             }
             //listener for keydown event
@@ -121,14 +122,14 @@
                 b3.draw(context);
                 b4.draw(context);
 
-
-
+                
+                bullet.draw(context);
 
                 // test.draw(context);
 
                 //move the Mainspr
                 jet.move();
-                bullet.move();
+
                   
 
 
