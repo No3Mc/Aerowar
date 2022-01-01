@@ -35,9 +35,10 @@ function Boost(){
         context.fill();
         //go ahead and draw the line
         context.stroke();
+        context.restore();
     }
         //restore the state of the context to what it was before our drawing
-        context.restore();
+         
 }
 
 
