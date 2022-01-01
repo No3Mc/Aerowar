@@ -121,10 +121,7 @@ function Mainspr() {
 
 
 
-    Mainspr.prototype.boost = function (){
 
-        
-    }
 
 
     //create a public property called Top
