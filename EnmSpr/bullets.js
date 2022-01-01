@@ -53,10 +53,8 @@ function bullets() {
 
     bullets.prototype.move = function ()
     {
-        //change the x axis by the x velocity
-        x += vx;
         //change the y axis by the y velocity
         y += vy;
     }
 
-    
+}
