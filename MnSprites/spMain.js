@@ -127,7 +127,7 @@ function Mainspr() {
         //move to the position to start the globe
         context.moveTo(xposn, yposn);
         //draw the curve from that position to +30px passing toward x+13, y+20
-        context.quadraticCurveTo(xposn + 10, yposn + 50, xposn + 10, yposn);
+        context.quadraticCurveTo(xposn + 7, yposn + 40, xposn + 10, yposn);
         //fill the globe
         context.fill();
         //draw the globe
