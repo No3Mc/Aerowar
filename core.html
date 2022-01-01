@@ -74,6 +74,10 @@
                 if (event.keyCode == keycode.DOWN) {
                     acceleraton.Halt();
                 }
+                if (event.keyCode == keycode.SPACE){
+                    bullet.move();
+                    
+                }
             }
             //listener for keydown event
             window.addEventListener('keydown', KeyboardEventHandler, false);
@@ -97,7 +101,7 @@
                 // context.lineWidth = 3;
                 context.clearRect(0, 0, canvas.width, canvas.height);
                 context.font = "bold 30px Helvetica, Arial, sans-serif";
-                context.fillText("Your fking score!", 1750, 30);
+                context.fillText("Your Score!", 1750, 30);
 
 
 
@@ -112,7 +116,7 @@
                 enem.draw(context);
                 //draws enem 2
                 enem2.draw(context);
-                bullet.draw(context);
+
                 b1.draw(context);
                 b2.draw(context);
                 b3.draw(context);
@@ -127,7 +131,7 @@
                 jet.move();
                 bullet.move();
                   
-                
+
 
 
                 enem.move();
