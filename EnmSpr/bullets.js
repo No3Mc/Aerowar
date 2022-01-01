@@ -9,6 +9,7 @@ function bullets() {
         vx = 0,
         vy = 0,
         Boom = false;
+
     //create the draw function to give us the draw method
     //it accepts one parameter which is the context from the canvas it is drawn on
     bullets.prototype.draw = function (context) {
@@ -34,7 +35,7 @@ function bullets() {
 
 
 
-        
+
         //close the path
         context.closePath();
         context.fill();
@@ -54,7 +55,6 @@ function bullets() {
         }
 
 
-
         //restore the state of the context to what it was before our drawing
         context.restore();
     }
@@ -63,16 +63,13 @@ function bullets() {
 
 
 
-    
 
     bullets.prototype.move = function () {
         // change the x axis by the x velocity
         
-        // if (){}
-        //change the y axis by the y velocity
         y -= 27;
-
-
+        // change the y axis by the y velocity
+        
     }
     //public method to set the vector of the bullets
     bullets.prototype.accelerate = function (Acceleration) {
