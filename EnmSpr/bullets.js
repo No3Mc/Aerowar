@@ -21,49 +21,20 @@ function bullets() {
          //Starting point
         context.moveTo(0, -40);
         context.fillStyle = 'rgb(0, 0, 0)';
-        context.lineTo(-15, -25);
-        context.lineTo(-15, -20);
-        context.lineTo(-18, -20)
-        context.lineTo(-50, -5)
-
-        context.lineTo(-60, 10)
-        context.lineTo(-40, 5)
-        context.lineTo(-15, 12)
-        context.lineTo(-15, 15)
-        context.lineTo(-25, 22)
-        context.lineTo(-25, 26)
-        context.lineTo(-23, 26)
-        context.lineTo(-20, 24)
-        context.lineTo(-20, 25)
-        context.lineTo(-15, 25)
-        context.lineTo(-15, 24)
-        context.lineTo(-12, 24)
-        context.lineTo(-12, 25)
-        context.lineTo(-10, 25)
-        context.lineTo(-10, 26)
-        
+        context.lineTo(5, 26);
+        context.lineTo(20, 50);
+        context.lineTo(5, 40)
         context.lineTo(0, 30)
-        context.lineTo(10, 26)
-        context.lineTo(10, 25)
-        context.lineTo(12, 25)
-        context.lineTo(12, 24)
-        context.lineTo(15, 24)
-        context.lineTo(15, 25)
-        context.lineTo(20, 25)
-        context.lineTo(20, 24)
-        context.lineTo(23, 26)
-        context.lineTo(25, 26)
-        context.lineTo(25, 22)
-        context.lineTo(15, 15)
-        context.lineTo(15, 12)
-        context.lineTo(40, 5)
-        context.lineTo(60, 10)
 
-        context.lineTo(50, -5)
-        context.lineTo(18, -20)
-        context.lineTo(15, -20);
-        context.lineTo(15, -25);
-        context.lineTo(0, -40);
+        context.lineTo(0, 30)
+        context.lineTo(5, 40)
+        context.lineTo(20, 50);
+        context.lineTo(5, 26);
+
+
+
+
+        
         //close the path
         context.closePath();
         context.fill();
@@ -97,6 +68,7 @@ function bullets() {
     bullets.prototype.move = function () {
         // change the x axis by the x velocity
         
+        // if (){}
         //change the y axis by the y velocity
         y -= 27;
 
