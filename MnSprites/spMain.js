@@ -118,6 +118,15 @@ function Mainspr() {
             vy = -vy
         }
     }
+
+
+
+    Mainspr.prototype.boost = function (){
+
+        
+    }
+
+
     //create a public property called Top
     Object.defineProperty(this, 'Top',
         {
