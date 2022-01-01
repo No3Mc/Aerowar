@@ -77,19 +77,6 @@ function bullets() {
         vx += Acceleration.AX;
         //set vy
         vy += Acceleration.AY;
-
-        if (x < 100){
-        vx = -vx
-        }
-        if (x > 1940){
-            vx = -vx
-        }
-        if (y < 90){
-            vy = -vy
-        }
-        if (y > 830){
-            vy = -vy
-        }
     }
 
 
