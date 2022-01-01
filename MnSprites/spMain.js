@@ -8,6 +8,8 @@ function Mainspr() {
         y = 800, //(up down) smaller the number, the closer to bottom bounds, and the larger, more closer to upper bounds
         vx = 0,
         vy = 0,
+        updwon = 20,
+        rightleft = 10,
         GlobeYellow = 1,
         Boom = false;
     //create the draw function to give us the draw method
@@ -219,7 +221,7 @@ function Mainspr() {
             //getter
             get: function () {
                 //return the value of y less height
-                return y - 20;
+                return y - updwon;
             }
         }
     )
@@ -229,7 +231,7 @@ function Mainspr() {
             //getter
             get: function () {
                 //return the value of y plus height
-                return y + 20;
+                return y + updwon;
 
             }
         }
@@ -240,7 +242,7 @@ function Mainspr() {
             //getter
             get: function () {
                 //return the value of x less width
-                return x - 30;
+                return x - rightleft;
             }
         }
     )
@@ -250,7 +252,7 @@ function Mainspr() {
             //getter
             get: function () {
                 //return the value of x plus width
-                return x + 30;
+                return x + rightleft;
             }
         }
     )
