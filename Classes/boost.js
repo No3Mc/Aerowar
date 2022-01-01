@@ -29,3 +29,12 @@ function Boost(){
         //restore the state of the context to what it was before our drawing
         context.restore();
 }
+
+Boost.prototype.initiate = function () {
+    // change the x axis by the x velocity
+    // x += vx;
+    // //change the y axis by the y velocity
+    // y += vy;
+
+
+}
