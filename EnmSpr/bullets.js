@@ -99,29 +99,6 @@ function bullets() {
     
 
 
-    //public property for X
-    Object.defineProperty(this, 'X',
-    {
-    get: function () {
-        return x;
-    },
-    set: function (value) {
-        x = value;
-    }
-    }
-    )
-
-    //public property for Y
-    Object.defineProperty(this, 'Y',
-    {
-        get: function () {
-            return y;
-        },
-        set: function (value) {
-            y = value;
-        }
-    }
-    )
 
 
 
