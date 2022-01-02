@@ -22,13 +22,15 @@ function bullets() {
          //Starting point
         context.moveTo(0, -40);
         context.fillStyle = 'rgb(0, 0, 0)';
-        context.lineTo(5, 26);
-
-        context.lineTo(5, 40)
-        context.lineTo(0, 30)
-
-        context.lineTo(0, 30)
         
+
+        
+        
+
+        context.lineTo(5, 0);
+        context.lineTo(0, 10);
+        context.lineTo(0, 10);
+        context.lineTo(-5, 0)        
 
         
 
