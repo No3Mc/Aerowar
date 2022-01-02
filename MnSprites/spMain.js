@@ -8,6 +8,10 @@ function Mainspr() {
         y = 800, //(up down) smaller the number, the closer to bottom bounds, and the larger, more closer to upper bounds
         vx = 0,
         vy = 0,
+        topbound = 90,
+        leftbound = 100,
+        rightbound = 1940,
+        bottombound = 830,
         updwon = 20,
         rightleft = 10,
         GlobeYellow = 1,
@@ -152,16 +156,16 @@ function Mainspr() {
         //set vy
         vy += Acceleration.AY;
 
-        if (x < 100){
+        if (x < leftbound){
         vx = -vx
         }
-        if (x > 1940){
+        if (x > rightbound){
             vx = -vx
         }
-        if (y < 90){
+        if (y < topbound){
             vy = -vy
         }
-        if (y > 830){
+        if (y > bottombound){
             vy = -vy
         }
     }
