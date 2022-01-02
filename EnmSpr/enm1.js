@@ -11,7 +11,7 @@ function enemy() {
         this.y = Math.random() * 400;
         //set the size of the star
         var size = 70;
-    
+        Boom = false;
         enemy.prototype.draw = function (context) {
             //save the state of the drawing context before we change it
             context.save();
@@ -32,14 +32,14 @@ function enemy() {
         context.moveTo(0, 40);
 
         context.fillStyle = '#FFA500';
-//2
+        //2
         context.lineTo(-15, 25);
         context.lineTo(-15, 20);
         context.lineTo(-18, 20)
 
         context.lineTo(-50, 5)
 
-//3
+        //3
         context.lineTo(-60, -10)
         context.lineTo(-40, -5)
 
@@ -57,7 +57,7 @@ function enemy() {
         context.lineTo(-10, -25)
         context.lineTo(-10, -26)
         
-//4
+        //4
         context.lineTo(0, -30)
         context.lineTo(10, -26)
         context.lineTo(10, -25)
@@ -76,7 +76,7 @@ function enemy() {
         context.lineTo(40, -5)
         context.lineTo(60, -10)
 
-//1
+        //1
         context.lineTo(50, 5)
         context.lineTo(18, 20)
         context.lineTo(15, 20);
@@ -85,6 +85,19 @@ function enemy() {
         context.lineTo(0, 40);
 
 
+
+
+
+                //if the ship has blown up
+                if (Boom == true) {
+                    //create a new instance of an image
+                    var img = new Image();
+                    //get the bitmap source
+                    img.src = "boom.png";
+                    //draw the image on the context
+                    context.drawImage(img, -100, -60);
+                }       
+                    
             //context.lineTo(0, 0);
             //close the path
             context.closePath();
