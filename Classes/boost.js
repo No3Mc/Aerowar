@@ -16,7 +16,7 @@ function Boost(){
         context.beginPath();
          //Starting point
 
-        context.fillStyle = 'rgb(0, 0, 0)';
+        context.fillStyle = '#FF4500';
         context.lineTo(0, 26);
         context.lineTo(-5, 26);
         context.lineTo(-10, 50);
