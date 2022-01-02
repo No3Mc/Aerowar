@@ -15,18 +15,20 @@ function Boost(){
         //start the line (path)
         context.beginPath();
          //Starting point
-        context.moveTo(0, -40);
+
         context.fillStyle = 'rgb(0, 0, 0)';
+        context.lineTo(0, 26);
+        context.lineTo(-5, 26);
+        context.lineTo(-10, 50);
+        context.lineTo(-5, 40)
+        context.lineTo(0, 30)
+
+
+        context.lineTo(0, 30)
+        context.lineTo(5, 40)
+        context.lineTo(10, 50);
         context.lineTo(5, 26);
-        context.lineTo(20, 50);
-        context.lineTo(5, 40)
-        context.lineTo(0, 30)
-
-
-        context.lineTo(0, 30)
-        context.lineTo(5, 40)
-        context.lineTo(20, 50);
-
+        context.lineTo(0, 26);
 
 
 
