@@ -97,7 +97,7 @@ function enemy() {
                     //draw the image on the context
                     context.drawImage(img, -100, -60);
                 }       
-                    
+
             //context.lineTo(0, 0);
             //close the path
             context.closePath();
@@ -170,6 +170,18 @@ function enemy() {
 
 
 
+    enemy.prototype.halt = function ()
+    {
+        //temp variable to store the vy
+        var temp = vy;
+        //kill all velocity
+        vx = 0;
+        vy = 0;
+        //set the ship as exploding
+        if (temp > .4) {
+            Boom = true;
+        }
+    }
 
 
 
