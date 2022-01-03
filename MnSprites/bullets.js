@@ -36,11 +36,6 @@ function bullets() {
         context.restore();
     }
 
-
-
-
-
-
     bullets.prototype.move = function () {
         // change the x axis by the x velocity
         
@@ -55,13 +50,6 @@ function bullets() {
     //     //set vy
     //     vy += Acceleration.AY;
     // }
-
-
-
-    
-    
-    
-
 
     //create a public property called Top
     Object.defineProperty(this, 'Space',
