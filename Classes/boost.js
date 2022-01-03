@@ -17,16 +17,21 @@ function Boost(){
          //Starting point
 
         context.fillStyle = '#FF4500';
+        //1
         context.lineTo(0, 26);
+        //2
         context.lineTo(-5, 26);
-        context.lineTo(-10, 50);
+        //3
+        context.lineTo(-5, 50);
+        //4
         context.lineTo(-5, 40)
+        //5
         context.lineTo(0, 30)
 
 
         context.lineTo(0, 30)
         context.lineTo(5, 40)
-        context.lineTo(10, 50);
+        context.lineTo(5, 50);
         context.lineTo(5, 26);
         context.lineTo(0, 26);
 
