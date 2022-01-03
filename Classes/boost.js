@@ -22,7 +22,7 @@ function Boost(){
         //2
         context.lineTo(-5, 26);
         //3
-        context.lineTo(-5, 50);
+        context.lineTo(-5, 30);
         //4
         context.lineTo(-5, 40)
         //5
@@ -31,7 +31,7 @@ function Boost(){
 
         context.lineTo(0, 30)
         context.lineTo(5, 40)
-        context.lineTo(5, 50);
+        context.lineTo(5, 30);
         context.lineTo(5, 26);
         context.lineTo(0, 26);
 
