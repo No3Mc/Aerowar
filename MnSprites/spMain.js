@@ -116,7 +116,7 @@ function Mainspr() {
         //right landing globe
         // Globe(context, 49, 12, colour);
         //left landing globe
-        Globe(context, -1, 0, colour);
+        Globe(context, -5, 0, colour);
         //increase the value of globe yellow (The larger the increment the faster the flashing effect)
         GlobeYellow += 1;
         //if globe yellow is more than 100 
