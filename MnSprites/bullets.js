@@ -4,7 +4,7 @@ function bullets() {
     //initialisation code will go here
     //create private variables for the x and y coordinates
     var x = 950,//(left right) smaller the number, the closer to left bounds, and the larger, more closer to right bounds
-        y = 770, //(up down) smaller the number, the closer to bottom bounds, and the larger, more closer to upper bounds
+        y = 670, //(up down) smaller the number, the closer to bottom bounds, and the larger, more closer to upper bounds
         vx = 0,
         vy = 0,
         GlobeYellow = 1;
