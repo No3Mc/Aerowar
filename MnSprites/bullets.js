@@ -6,8 +6,8 @@ function bullets() {
     var x = 950,//(left right) smaller the number, the closer to left bounds, and the larger, more closer to right bounds
         y = 770, //(up down) smaller the number, the closer to bottom bounds, and the larger, more closer to upper bounds
         vx = 0,
-        vy = 0;
-
+        vy = 0,
+        GlobeYellow = 1;
     //create the draw function to give us the draw method
     //it accepts one parameter which is the context from the canvas it is drawn on
     bullets.prototype.draw = function (context) {
@@ -31,7 +31,7 @@ function bullets() {
         context.fill();
         //go ahead and draw the line
         context.stroke();
-
+        DrawGlobes(context);
         //restore the state of the context to what it was before our drawing
         context.restore();
     }
@@ -50,6 +50,61 @@ function bullets() {
     //     //set vy
     //     vy += Acceleration.AY;
     // }
+
+
+
+    function DrawGlobes(context) {
+        //var to store the colour of the globe
+        var colour = "";
+        //if the value of GlobeYellow is less than 50
+        if (GlobeYellow < 10) {
+            //set the colour to yellow
+            colour = "#ffff00";
+        }
+        else {
+            //otherwise set it to red
+            colour = "#ff0000";
+        }
+        //middle landing globe
+        // Globe(context, -14, 12, colour);
+        //right landing globe
+        // Globe(context, 49, 12, colour);
+        //left landing globe
+        Globe(context, -5, 0, colour);
+        //increase the value of globe yellow (The larger the increment the faster the flashing effect)
+        GlobeYellow += 1;
+        //if globe yellow is more than 100 
+        if (GlobeYellow > 50) {
+            //set it back to 1
+            GlobeYellow = 1;
+        }
+    }
+    function Globe(context, xposn, yposn, colour) {
+        //begin the path
+        context.beginPath();
+        //set the fill colour
+        context.fillStyle = colour;
+        //move to the position to start the globe
+        // context.moveTo(xposn, yposn);
+        // //draw the curve from that position to +30px passing toward x+13, y+20
+        // context.quadraticCurveTo(xposn + 5, yposn + 10, xposn + 10, yposn);
+        context.moveTo(0, -10);
+
+        context.lineTo(5, 0);
+        context.lineTo(0, 10);
+        context.lineTo(0, 10);
+        context.lineTo(-5, 0)  
+        //fill the globe
+        context.fill();
+        //draw the globe
+        context.stroke();
+    }
+
+
+
+
+
+
 
     //create a public property called Top
     Object.defineProperty(this, 'Space',
