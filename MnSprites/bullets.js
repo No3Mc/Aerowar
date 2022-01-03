@@ -19,7 +19,7 @@ function bullets() {
         //start the line (path)
         context.beginPath();
          //Starting point
-        context.moveTo(0, -40);
+        context.moveTo(0, -10);
         context.fillStyle = 'rgb(0, 0, 0)';
         
 
