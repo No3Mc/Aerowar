@@ -10,3 +10,4 @@ JavaScript game
 At least one sprite must have its own internal animation e.g., flashing lights etc.
 Your code MUST be Object-Oriented in all respects, with classes that you have used from the sample code, and/or classes adapted from the sample code. 
 
+![image](https://user-images.githubusercontent.com/41834061/149675098-6aee925a-e2ca-4564-8753-16dbd85614c1.png)
