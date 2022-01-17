@@ -85,10 +85,6 @@
             // window.addEventListener('keyup', KeyboardEventHandler, false);
             //need to add the sty.js 
             
-            
-            // testing sprite tracking
-            // test.X = 300;
-            // test.Y = 300;
 
 
 
@@ -120,16 +116,16 @@
                 enem.draw(context);
                 //draws enem 2
                 enem2.draw(context);
-
+                //draw bounds
                 b1.draw(context);
                 b2.draw(context);
                 b3.draw(context);
                 b4.draw(context);
-
+                //draws noz
                 nox.draw(context);
+                //draws bullets
                 bullet.draw(context);
-                // bullet.move();
-                // test.draw(context);
+
 
                 //move the Mainspr
                 jet.move();
@@ -137,10 +133,10 @@
 
 
 
-
+                //moving enemy sprites
                 enem.move();
                 enem2.move();
-                // bullet.accelerate();
+
                 //acceleration
                 jet.accelerate(acceleraton);
                 //get the next animation frame
