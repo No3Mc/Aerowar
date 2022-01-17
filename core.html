@@ -79,14 +79,30 @@
                 if (event.keyCode == keycode.DOWN) {
                     acceleraton.Halt();
                 }
+                if (event.keyCode == keycode.W) {
+                    acceleraton.VThrust(.1);
+                }
+                //←
+                if (event.keyCode == keycode.A) {
+                    acceleraton.HThrust(.1);
+                }
+                //→
+                if (event.keyCode == keycode.D) {
+                    acceleraton.HThrust(-.1);
+                }
+                //↓
+                if (event.keyCode == keycode.S) {
+                    acceleraton.Halt();
+                }
                 if (event.keyCode == keycode.SPACE){
-
 
                 bullet.move();
 
                 console.log("hell")
                 }
+                
             }
+
             //listener for keydown event
             window.addEventListener('keydown', KeyboardEventHandler, false);
             // window.addEventListener('keyup', KeyboardEventHandler, false);
