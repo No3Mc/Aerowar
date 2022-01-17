@@ -13,7 +13,7 @@
     <script src="Classes/sty.js"></script> 
     <!-- main shooting sprite -->
     <script src="MnSprites/spMain.js"></script>
-    <script src="MnSprites/bullets.js"></script>
+    <!-- <script src="MnSprites/bullets.js"></script> -->
     <!-- main bg -->
     <script src="Classes/keycode.js"></script>
     <script src="Classes/vector.js"></script>
@@ -43,7 +43,7 @@
                 jet = new Mainspr(),
                 enem = new enemy(),
                 enem2 = new enemy2(),
-                bullet = new bullets(),
+                // bullet = new bullets(),
                 b1 = new bound1(),
                 b2 = new bound2(),
                 b3 = new bound3(),
@@ -75,7 +75,7 @@
                 }
                 if (event.keyCode == keycode.SPACE){
 
-                bullet.move();
+                // bullet.move();
                 console.log("hell")
                 }
             }
@@ -123,7 +123,7 @@
                 b4.draw(context);
 
                 nox.draw(context);
-                bullet.draw(context);
+                // bullet.draw(context);
                 // bullet.move();
                 // test.draw(context);
 
