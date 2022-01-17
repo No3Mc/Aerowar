@@ -4,4 +4,5 @@ function Shoot(Fire){
         var ay = 0;
         //variable to store the gravity value
         fire = Fire;
+        
 }
