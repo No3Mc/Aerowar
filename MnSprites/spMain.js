@@ -140,7 +140,9 @@ function Mainspr() {
         //draw the globe
         context.stroke();
     }
+    // function bullet(context, xposn, yposn, colour){
 
+    // }
 
     Mainspr.prototype.move = function () {
         // change the x axis by the x velocity
