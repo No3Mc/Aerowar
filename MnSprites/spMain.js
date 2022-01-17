@@ -15,6 +15,9 @@ function Mainspr() {
         updwon = 20,
         rightleft = 10,
         GlobeYellow = 1,
+        Xbullet = x,
+        Ybullet = y,
+        bulspeed = 1,
         Boom = false;
     //create the draw function to give us the draw method
     //it accepts one parameter which is the context from the canvas it is drawn on
@@ -170,7 +173,10 @@ function Mainspr() {
         }
     }
 
-    
+   function shoot(Xbullet = x, Ybullet = y, bulspeed = 1)
+   {
+
+   }
     
     
 
