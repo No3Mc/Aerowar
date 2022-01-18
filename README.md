@@ -20,16 +20,16 @@ Sprite design 25%<br>
 
 JavaScript Code 25%<br>
 **Requirements**<br>
-Comments<br>
-Code readability <br>
-Appropriate application of OO design<br>
+- [x] Comments<br>
+- [x] Code readability <br>
+- [x] Appropriate application of OO design<br>
 
 Game Play 10%<br>
 **Requirements**<br>
-Subjective enjoyment<br>
-Professionalism<br>
-Complexity<br>
-System stability and compilation<br>
+- [ ] Subjective enjoyment<br>
+- [ ] Professionalism<br>
+- [ ] Complexity<br>
+- [x] System stability and compilation<br>
 
 Sprints 15%<br>
 
