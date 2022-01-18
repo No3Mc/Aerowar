@@ -1,7 +1,9 @@
 ﻿//create the constructor for the class square
 function enemy2() {
         //initialisation code will go here
-        
+        rightbounds = 1940;
+        disx = 700;
+        disy = 500;
         //create private variables for the x and y coordinates
         this.x = Math.random() * -1800;
         this.y = Math.random() * 400;
@@ -95,13 +97,13 @@ function enemy2() {
         //     this.x -= 4;
             this.x += 4;
             if (this.x < 100) {
-                this.x = 700;
-                this.y = 500;
+                this.x = disx;
+                this.y = disy;
                 // this.y = Math.random() * 600;
             }
-            if (this.x > 1940) {
-                this.x = 700;
-                this.y = 500;
+            if (this.x > rightbounds) {
+                this.x = disx;
+                this.y = disy;
                 // this.y = Math.random() * 600;
             }
             // if (this.y < 90) {
