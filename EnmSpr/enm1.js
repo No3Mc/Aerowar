@@ -9,7 +9,7 @@ function enemy() {
          leftbound = 100;
 
          thisx = 1900;
-         thisy = 500;
+         thisy = 200;
         //create private variables for the x and y coordinates
         this.x = Math.random() * -1800;
         this.y = Math.random() * 400;
