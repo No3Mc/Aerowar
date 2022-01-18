@@ -17,6 +17,7 @@
     <script src="Classes/keycode.js"></script>
     <script src="Classes/vector.js"></script>
     <script src="Classes/acceleration.js"></script>
+    <script src="classes/collection.js"></script>
     <!-- secondary sprites -->
     <script src="EnmSpr/enm1.js"></script>
     <script src="enmspr/enm2.js"></script>
@@ -43,7 +44,6 @@
                 //enemies objects
                 enem = new enemy(),
                 enem2 = new enemy2(),
-                //bullet objects
                 bullet = new bullets(),
                 //bound objects
                 b1 = new bound1(),
@@ -63,6 +63,7 @@
 
             //function to handle keyboard events
             function KeyboardEventHandler(event) {
+                InitBullets(event) == true;
                 //↑
                 if (event.keyCode == keycode.UP) {
                     acceleraton.VThrust(.1);
@@ -94,17 +95,41 @@
                 if (event.keyCode == keycode.S) {
                     acceleraton.Halt();
                 }
-                if (event.keyCode == keycode.SPACE){
-
-                bullet.move();
-
-                console.log("hell")
+            }
+                function InitBullets(event) {
+                // if the space bar is pressed
+                if (event.keyCode == keycode.SPACE) {
+                    console.log("space bar is pressed");
+                    // set the postion of the lasers relative the ship
+                    bullet = new bullets(jet.X, jet.Y - 73);
+                    bulletz.add(bullet);
                 }
+            }
                 
+
+
+            var bulletz = new Collection();
+            // function for drawing the lasers
+            function Drawbullets() {
+                var count = 0;
+                while (count < bulletz.count) {
+                    bulletz.item(count).draw(context);
+                    count++;
+                }
+            }
+
+            // function for firing the lasers
+            function Movebullets() {
+                var count = 0;
+                while (count < bulletz.count) {
+                    bulletz.item(count).move();
+                    count++;
+                }
             }
 
             //listener for keydown event
             window.addEventListener('keydown', KeyboardEventHandler, false);
+            window.addEventListener('Keydown', InitBullets, false);
             // window.addEventListener('keyup', KeyboardEventHandler, false);
             //need to add the sty.js 
             
@@ -131,8 +156,8 @@
                 b4.draw(context);
                 //draws noz
                 nox.draw(context);
-                //draws bullets
-                bullet.draw(context);
+                Drawbullets();
+                Movebullets();
 
 
                 //move the Mainspr
