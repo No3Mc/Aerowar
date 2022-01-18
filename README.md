@@ -13,10 +13,10 @@ Your code MUST be Object-Oriented in all respects, with classes that you have us
 
 Sprite design 25%<br>
 **Requirements**<br>
-User interaction<br>
-Collision detection<br>
-Appropriate motion<br>
-Internal sprite animation<br>
+- [ ] User interaction<br>
+- [ ] Collision detection<br>
+- [x] Appropriate motion<br>
+- [x] Internal sprite animation<br>
 
 JavaScript Code 25%<br>
 **Requirements**<br>
