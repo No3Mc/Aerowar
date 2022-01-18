@@ -21,12 +21,6 @@ function enemy() {
             context.rotate(rotation);
             //start the line (path)
             context.beginPath();
-        //     context.moveTo(-size, size);
-        //     context.lineTo(size, size);
-        //     context.lineTo(size, -size);
-        //     context.lineTo(size, -size);
-        //     context.lineTo(-size, -size);
-
 
 
         context.moveTo(0, 40);
@@ -114,20 +108,13 @@ function enemy() {
             // this.y -= 4;
             if (this.x < 100) {
                 this.x = 800;
-                this.y = Math.random() * 600;
+                // this.y = Math.random() * 400;
             }
             if (this.x > 1940) {
                 this.x = 800;
-                this.y = Math.random() * 600;
+                // this.y = Math.random() * 200;
             }
-            if (this.y < 90) {
-                this.y = 800;
-                this.x = Math.random() * 600;
-            }
-            if (this.y > 830) {
-                this.y = 800;
-                this.x = Math.random() * 600;
-            }
+
         }
 
 
