@@ -1,134 +1,109 @@
-﻿
-//create the constructor for the class bullets
-function bullets() {
+﻿function bullets(x, y) {
+    this.x = x;
+    this.y = y;
+    this.vx = 0;
+    this.vy = 0;
 
-     
-    //initialisation code will go here
-    //create private variables for the x and y coordinates
-    var x = 950,//(left right) smaller the number, the closer to left bounds, and the larger, more closer to right bounds
-        y = 770, //(up down) smaller the number, the closer to bottom bounds, and the larger, more closer to upper bounds
-        topbound = 90,
-        GlobeYellow = 1;
-    //create the draw function to give us the draw method
-    //it accepts one parameter which is the context from the canvas it is drawn on
+    //ship = new Rocket();
+    // change the y posn of the bullets relative to the rocket
+    //this.x = ship.RX;
+    // change the x posn of the bullets relative to the rocket
+    //this.y = ship.RY - 73;
+
     bullets.prototype.draw = function (context) {
-        //save the state of the drawing context before we change it
         context.save();
-        //set the coordinates of the drawing area of the new shape to x and y
-        context.translate(x, y);
-        //start the line (path)
+        context.translate(this.x, this.y);
         context.beginPath();
-         //Starting point
-        context.moveTo(0, -10);
-        context.fillStyle = 'rgb(0, 0, 0)';
-
-        context.lineTo(5, 0);
-        context.lineTo(0, 10);
-        context.lineTo(0, 10);
-        context.lineTo(-5, 0);    
-
-        //close the path
+        context.moveTo(-2, -10);
+        context.lineTo(-2, 10);
+        context.quadraticCurveTo(0, 12, 2, 10);
+        context.lineTo(2, -10);
+        context.quadraticCurveTo(2, -12, -2, -10);
         context.closePath();
-        context.fill();
-        //go ahead and draw the line
         context.stroke();
-        DrawGlobes(context);
-        //restore the state of the context to what it was before our drawing
         context.restore();
     }
 
     bullets.prototype.move = function () {
-        // change the x axis by the x velocity
-        
-        y -= 27;
-        // change the y axis by the y velocity
-
-        // this.y -= 4;
-        if (y< topbound) {
-            x = 950;
-            y = 770;
-
-        }
-
-        
-    }
-    //public method to set the vector of the bullets
-    // bullets.prototype.accelerate = function (Acceleration) {
-    //     //set vx
-    //     vx += Acceleration.AX;
-    //     //set vy
-    //     vy += Acceleration.AY;
-    // }
-
-
-
-    function DrawGlobes(context) {
-        //var to store the colour of the globe
-        var colour = "";
-        //if the value of GlobeYellow is less than 50
-        if (GlobeYellow < 10) {
-            //set the colour to yellow
-            colour = "#ffff00";
-        }
-        else {
-            //otherwise set it to red
-            colour = "#ff0000";
-        }
-        //middle landing globe
-        // Globe(context, -14, 12, colour);
-        //right landing globe
-        // Globe(context, 49, 12, colour);
-        //left landing globe
-        Globe(context, -5, 0, colour);
-        //increase the value of globe yellow (The larger the increment the faster the flashing effect)
-        GlobeYellow += 1;
-        //if globe yellow is more than 100 
-        if (GlobeYellow > 50) {
-            //set it back to 1
-            GlobeYellow = 1;
-        }
-    }
-    function Globe(context, xposn, yposn, colour) {
-        //begin the path
-        context.beginPath();
-        //set the fill colour
-        context.fillStyle = colour;
-        //move to the position to start the globe
-        // context.moveTo(xposn, yposn);
-        // //draw the curve from that position to +30px passing toward x+13, y+20
-        // context.quadraticCurveTo(xposn + 5, yposn + 10, xposn + 10, yposn);
-        context.moveTo(0, -10);
-
-        context.lineTo(5, 0);
-        context.lineTo(0, 10);
-        context.lineTo(0, 10);
-        context.lineTo(-5, 0)  
-        //fill the globe
-        context.fill();
-        //draw the globe
-        context.stroke();
+        this.y -= 3;
     }
 
+    bullets.prototype.setVector = function (vector) {
+        //set vx
+        this.vx = vector.VX;
+        //set vy
+        this.vy = vector.VY;
+    }
 
-
-
-
-
-
-    //create a public property called Top
-    Object.defineProperty(this, 'Space',
+    Object.defineProperty(this, 'VX',
         {
             //getter
             get: function () {
-                //return the value of y less height
-                return y - 20;
+                //return the x posn
+                return this.vx;
+            },
+            set: function (value) {
+                this.vx = value;
             }
         }
     )
-    
 
+    Object.defineProperty(this, 'VY',
+        {
+            //getter
+            get: function () {
+                //return the y posn
+                return this.vy;
+            },
 
+            set: function (value) {
+                this.vy = value;
+            }
+        }
+    )
 
+    //create a public property called Top
+    Object.defineProperty(this, 'Top',
+        {
+            //getter
+            get: function () {
+                //return the y posn less the height
+                return this.y - 10;
+            }
+        }
+    )
 
+    //create a public property called Bottom
+    Object.defineProperty(this, 'Bottom',
+        {
+            //getter
+            get: function () {
+                //return the y posn plus the height
+                return this.y + 10;
+            }
+        }
+    )
+
+    //create a public property called Left
+    Object.defineProperty(this, 'Left',
+        {
+            //getter
+            get: function () {
+                //return the x posn less the width
+                return this.x - 80;
+            }
+        }
+    )
+
+    //create a public property called Right
+    Object.defineProperty(this, 'Right',
+        {
+            //getter
+            get: function () {
+                //return the x posn plus the width
+                return this.x + 80;
+            }
+        }
+    )
 
 }
