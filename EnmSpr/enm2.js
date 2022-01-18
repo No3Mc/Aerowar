@@ -2,8 +2,8 @@
 function enemy2() {
         //initialisation code will go here
         rightbounds = 1940;
-        disx = 700;
-        disy = 500;
+        disx = 100;
+        disy = 200;
         //create private variables for the x and y coordinates
         this.x = Math.random() * -1800;
         this.y = Math.random() * 400;
