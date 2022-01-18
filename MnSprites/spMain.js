@@ -157,7 +157,7 @@ function Mainspr() {
         //set vx
         vx += Acceleration.AX;
         //set vy
-        vy += Acceleration.AY;
+            vy += Acceleration.AY;
 
         if (x < leftbound){
         vx = -vx
