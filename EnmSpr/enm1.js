@@ -2,10 +2,14 @@
 
 //create the constructor for the class square
 function enemy() {
-    
+    // this is the sprite going left
         //initialisation code will go here
          var rotation = 0;
-         
+
+         leftbound = 100;
+
+         thisx = 1900;
+         thisy = 500;
         //create private variables for the x and y coordinates
         this.x = Math.random() * -1800;
         this.y = Math.random() * 400;
@@ -15,7 +19,7 @@ function enemy() {
         enemy.prototype.draw = function (context) {
             //save the state of the drawing context before we change it
             context.save();
-            context.fillStyle = "#FFFFFF";
+            context.fillStyle = "#FF5733";//red one
             //set the coordinates of the drawing area of the new shape to x and y
             context.translate(this.x, this.y);
             context.rotate(rotation);
@@ -25,7 +29,7 @@ function enemy() {
 
         context.moveTo(0, 40);
 
-        context.fillStyle = '#FFA500';
+        context.fillStyle = '#FF5733';//red one
         //2
         context.lineTo(-15, 25);
         context.lineTo(-15, 20);
@@ -106,13 +110,10 @@ function enemy() {
             //change the x axis
             this.x -= 4;
             // this.y -= 4;
-            if (this.x < 100) {
-                this.x = 800;
+            if (this.x < leftbound) {
+                this.x = thisx;
+                this.y = thisy;
                 // this.y = Math.random() * 400;
-            }
-            if (this.x > 1940) {
-                this.x = 800;
-                // this.y = Math.random() * 200;
             }
 
         }
