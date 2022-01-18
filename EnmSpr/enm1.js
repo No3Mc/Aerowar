@@ -8,7 +8,7 @@ function enemy() {
 
          leftbound = 100;
 
-         thisx = 1900;
+         thisx = 1940;
          thisy = 200;
         //create private variables for the x and y coordinates
         this.x = Math.random() * -1800;
