@@ -28,7 +28,7 @@ function Mainspr() {
         context.beginPath();
          //Starting point
         context.moveTo(0, -40);
-        context.fillStyle = 'rgb(0, 0, 0)';
+        context.fillStyle = '#398443';//red one
         context.lineTo(-15, -25);
         context.lineTo(-15, -20);
         context.lineTo(-18, -20)
