@@ -24,13 +24,13 @@ Sprite design 25%<br>
 - [x] Code readability <br>
 - [x] Appropriate application of OO design<br>
 
-Game Play 10%<br>
+✅Game Play 10%<br>
 **Requirements**<br>
 - [x] Subjective enjoyment<br>
 - [x] Professionalism<br>
 - [x] Complexity<br>
 - [x] System stability and compilation<br>
 
-Sprints 15%<br>
+✅Sprints 15%<br>
 
 ![image](https://user-images.githubusercontent.com/41834061/149675098-6aee925a-e2ca-4564-8753-16dbd85614c1.png)
