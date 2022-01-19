@@ -57,6 +57,14 @@
                 //create a new instance of the collision detection class
                 collision = new Collision();
 
+
+                vectorLeft = new Vector(180, 3),
+                // new instance of vector going right direction
+                vectorRight = new Vector(360, 3);
+
+                vectorup = new Vector(-90, 3),
+                // new instance of vector going right direction
+                vectordown = new Vector(90, 5);
                 //test
 
 
@@ -67,34 +75,40 @@
                 InitBoostz(event) == true;
                 //↑
                 if (event.keyCode == keycode.UP) {
-                    acceleraton.VThrust(.1);
+                    
+                    jet.setVector(vectorup);
+                    acceleraton.VThrust(1);
                 }
                 //←
                 if (event.keyCode == keycode.LEFT) {
-                    acceleraton.HThrust(.1);
+
+                    jet.setVector(vectorLeft);
                 }
                 //→
                 if (event.keyCode == keycode.RIGHT) {
-                    acceleraton.HThrust(-.1);
+
+                    jet.setVector(vectorRight);
                 }
                 //↓
                 if (event.keyCode == keycode.DOWN) {
+                    
+                    jet.setVector(vectordown);
                     acceleraton.Halt();
                 }
                 if (event.keyCode == keycode.W) {
-                    acceleraton.VThrust(.1);
+                    jet.setVector(vectorup);
                 }
                 //←
                 if (event.keyCode == keycode.A) {
-                    acceleraton.HThrust(.1);
+                    jet.setVector(vectorLeft);
                 }
                 //→
                 if (event.keyCode == keycode.D) {
-                    acceleraton.HThrust(-.1);
+                    jet.setVector(vectorRight);
                 }
                 //↓
                 if (event.keyCode == keycode.S) {
-                    acceleraton.Halt();
+                    jet.setVector(vectordown);
                 }
             }
 
@@ -142,10 +156,18 @@
                 }
             }
 
+
+            function Stopjet(event) {
+                if (event.keyCode == keycode.LEFT || event.keyCode == keycode.RIGHT || event.keyCode == keycode.UP || event.keyCode == keycode.DOWN || event.keyCode == keycode.W || event.keyCode == keycode.A || event.keyCode == keycode.S || event.keyCode == keycode.D) {
+                    jet.halt();
+                }
+            }
+
             //listener for keydown event
             window.addEventListener('keydown', KeyboardEventHandler, false);
             window.addEventListener('Keydown', InitBullets, false);
             window.addEventListener('Keydown', InitBoostz, false);
+            window.addEventListener('keyup', Stopjet, false);
             // window.addEventListener('keyup', KeyboardEventHandler, false);
             //need to add the sty.js 
             
@@ -187,7 +209,7 @@
                 enem2.move();
 
                 //acceleration
-                jet.accelerate(acceleraton);
+                // jet.accelerate(acceleraton);
                 //get the next animation frame
                 window.requestAnimationFrame(drawFrame);
 
