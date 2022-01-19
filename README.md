@@ -26,9 +26,9 @@ Sprite design 25%<br>
 
 Game Play 10%<br>
 **Requirements**<br>
-- [ ] Subjective enjoyment<br>
-- [ ] Professionalism<br>
-- [ ] Complexity<br>
+- [x] Subjective enjoyment<br>
+- [x] Professionalism<br>
+- [x] Complexity<br>
 - [x] System stability and compilation<br>
 
 Sprints 15%<br>
