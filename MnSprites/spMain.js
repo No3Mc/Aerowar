@@ -4,16 +4,20 @@ function Mainspr() {
     //initialisation code will go here
 
     //create private variables for the x and y coordinates
-    var x = 950,//(left right) smaller the number, the closer to left bounds, and the larger, more closer to right bounds
-        y = 800, //(up down) smaller the number, the closer to bottom bounds, and the larger, more closer to upper bounds
-        vx = 0,
-        vy = 0,
+    // var x = 950,//(left right) smaller the number, the closer to left bounds, and the larger, more closer to right bounds
+    //     y = 800, //(up down) smaller the number, the closer to bottom bounds, and the larger, more closer to upper bounds
+    //     vx = 0,
+    //     vy = 0,
         topbound = 90,
         leftbound = 100,
         rightbound = 1940,
         bottombound = 830,
-        updwon = 20,
-        rightleft = 10,
+        updwon = 80,
+        rightleft = 80,
+        this.x = 950;
+        this.y = 800;
+        this.vx = 0;
+        this.vy = 0;
         GlobeYellow = 1,
 
         Boom = false;
@@ -23,7 +27,7 @@ function Mainspr() {
         //save the state of the drawing context before we change it
         context.save();
         //set the coordinates of the drawing area of the new shape to x and y
-        context.translate(x, y);
+        context.translate(this.x, this.y);
         //start the line (path)
         context.beginPath();
          //Starting point
@@ -143,37 +147,21 @@ function Mainspr() {
         //draw the globe
         context.stroke();
     }
-    // function bullet(context, xposn, yposn, colour){
 
+
+    // Mainspr.prototype.move = function () {
+    //     // change the x axis by the x velocity
+    //     x += vx;
+    //     //change the y axis by the y velocity
+    //     y += vy;
     // }
-
-    Mainspr.prototype.move = function () {
-        // change the x axis by the x velocity
-        x += vx;
-        //change the y axis by the y velocity
-        y += vy;
-
-
-    }
-    //public method to set the vector of the Mainspr
+    // //public method to set the vector of the Mainspr
     Mainspr.prototype.accelerate = function (Acceleration) {
         //set vx
-        vx += Acceleration.AX;
+        this.vx += Acceleration.AX;
         //set vy
-        vy += Acceleration.AY;
+        this.vy += Acceleration.AY;
 
-        if (x < leftbound){
-        vx = -vx
-        }
-        if (x > rightbound){
-            vx = -vx
-        }
-        if (y < topbound){
-            vy = -vy
-        }
-        if (y > bottombound){
-            vy = -vy
-        }
     }
 
  
@@ -181,67 +169,67 @@ function Mainspr() {
     
 
 
-    //create a public property called Top
-    Object.defineProperty(this, 'Top',
-        {
-            //getter
-            get: function () {
-                //return the value of y less height
-                return y - updwon;
-            }
-        }
-    )
-    //create a public property called Bottom
-    Object.defineProperty(this, 'Bottom',
-        {
-            //getter
-            get: function () {
-                //return the value of y plus height
-                return y + updwon;
+    // //create a public property called Top
+    // Object.defineProperty(this, 'Top',
+    //     {
+    //         //getter
+    //         get: function () {
+    //             //return the value of y less height
+    //             return y - updwon;
+    //         }
+    //     }
+    // )
+    // //create a public property called Bottom
+    // Object.defineProperty(this, 'Bottom',
+    //     {
+    //         //getter
+    //         get: function () {
+    //             //return the value of y plus height
+    //             return y + updwon;
 
-            }
-        }
-    )
-    //create a public property called Left
-    Object.defineProperty(this, 'Left',
-        {
-            //getter
-            get: function () {
-                //return the value of x less width
-                return x - rightleft;
-            }
-        }
-    )
-    //create a public property called Right
-    Object.defineProperty(this, 'Right',
-        {
-            //getter
-            get: function () {
-                //return the value of x plus width
-                return x + rightleft;
-            }
-        }
-    )
+    //         }
+    //     }
+    // )
+    // //create a public property called Left
+    // Object.defineProperty(this, 'Left',
+    //     {
+    //         //getter
+    //         get: function () {
+    //             //return the value of x less width
+    //             return x - rightleft;
+    //         }
+    //     }
+    // )
+    // //create a public property called Right
+    // Object.defineProperty(this, 'Right',
+    //     {
+    //         //getter
+    //         get: function () {
+    //             //return the value of x plus width
+    //             return x + rightleft;
+    //         }
+    //     }
+    // )
 
-    Mainspr.prototype.halt = function ()
-    {
-        //temp variable to store the vy
-        var temp = vy;
-        //kill all velocity
-        vx = 0;
-        vy = 0;
-        //set the ship as exploding
-        if (temp > .4) {
-            Boom = true;
-        }
-    }
+    // Mainspr.prototype.halt = function ()
+    // {
+    //     //temp variable to store the vy
+    //     var temp = vy;
+    //     //kill all velocity
+    //     vx = 0;
+    //     vy = 0;
+    //     //set the ship as exploding
+    //     if (temp > .4) {
+    //         Boom = true;
+    //     }
+    // }
 
 
     //public property for X
     Object.defineProperty(this, 'X',
     {
     get: function () {
-        return x;
+        return this.x;
     },
     set: function (value) {
         x = value;
@@ -253,7 +241,7 @@ function Mainspr() {
     Object.defineProperty(this, 'Y',
     {
         get: function () {
-            return y;
+            return this.y;
         },
         set: function (value) {
             y = value;
@@ -262,5 +250,126 @@ function Mainspr() {
     )
 
 
+    Mainspr.prototype.move = function () {
+        // change the x-axis by the x velocity
+        this.x += this.vx;
+        // change the y-axis by the y velocity
+        this.y += this.vy;
+        // stop ship from leaving canvas
+        if (this.x < leftbound){
+            this.vx = -this.vx
+        }
+        if (this.x > rightbound){
+            this.vx = -this.vx
+        }
+        if (this.y < topbound){
+            this.vy = -this.vy
+        }
+        if (this.y > bottombound){
+            this.vy = -this.vy
+        }
+    }
+
+    //public method to set the vector of the rocekt
+    Mainspr.prototype.setVector = function (vector) {
+        //set vx
+        this.vx = vector.VX;
+        //set vy
+        this.vy = vector.VY;
+    }
+
+    // set ship velocity to zero
+    Mainspr.prototype.halt = function () {
+        this.vx = 0;
+        this.vy = 0;
+    }
+
+    Object.defineProperty(this, 'VX',
+        {
+            set: function (value) {
+                // return the y posn
+                this.vx = value;
+            }
+        }
+    )
+
+    // public read only propery for the x posn
+    Object.defineProperty(this, 'VY',
+        {
+            set: function (value) {
+                // return the x posn
+                this.vy = value;
+            }
+        }
+    )
+
+    //create a public property called Top
+    Object.defineProperty(this, 'Top',
+        {
+            //getter
+            get: function () {
+                //return the y posn less the height
+                return y - updwon;
+            }
+        }
+    )
+
+    //create a public property called Bottom
+    Object.defineProperty(this, 'Bottom',
+        {
+            //getter
+            get: function () {
+                //return the y posn plus the height
+                return y + updwon;
+            }
+        }
+    )
+
+    //create a public property called Left
+    Object.defineProperty(this, 'Left',
+        {
+            //getter
+            get: function () {
+                //return the x posn less the width
+                return x - rightleft;
+            }
+        }
+    )
+
+    //create a public property called Right
+    Object.defineProperty(this, 'Right',
+        {
+            //getter
+            get: function () {
+                //return the x posn plus the width
+                return x + rightleft;
+            }
+        }
+    )
+
+
+
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
