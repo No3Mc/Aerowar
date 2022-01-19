@@ -4,7 +4,7 @@
     var ax = 0;
     var ay = 0;
     //variable to store the gravity value
-    gravity = Gravity;
+    // gravity = Gravity;
 
     //public read only property for AX
     Object.defineProperty(this, 'AX',
