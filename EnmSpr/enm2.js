@@ -13,7 +13,7 @@ function enemy2() {
         enemy2.prototype.draw = function (context) {
             //save the state of the drawing context before we change it
             context.save();
-            context.fillStyle = "#FFFFFF";
+
             //set the coordinates of the drawing area of the new shape to x and y
             context.translate(this.x, this.y);
             //start the line (path)
@@ -28,7 +28,7 @@ function enemy2() {
 
         context.moveTo(0, 40);
 
-        context.fillStyle = '#FFA500';
+        context.fillStyle = '#B4BF0A';//potty one
 //2
         context.lineTo(-15, 25);
         context.lineTo(-15, 20);
