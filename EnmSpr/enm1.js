@@ -174,5 +174,53 @@ function enemy() {
 
 
 
+//create a public property called Top
+Object.defineProperty(this, 'Top',
+{
+    //getter
+    get: function () {
+        //return the y posn less the height
+        return this.y - 55;
+    }
+}
+)
+
+//create a public property called Bottom
+Object.defineProperty(this, 'Bottom',
+{
+    //getter
+    get: function () {
+        //return the y posn plus the height
+        return this.y + 55;
+    }
+}
+)
+
+//create a public property called Left
+Object.defineProperty(this, 'Left',
+{
+    //getter
+    get: function () {
+        //return the x posn less the width
+        return this.x - 80;
+    }
+}
+)
+
+//create a public property called Right
+Object.defineProperty(this, 'Right',
+{
+    //getter
+    get: function () {
+        //return the x posn plus the width
+        return this.x + 80;
+    }
+}
+)
+
+
+
+
+
     }
     
