@@ -18,11 +18,11 @@
     <script src="Classes/vector.js"></script>
     <script src="Classes/acceleration.js"></script>
     <script src="classes/collection.js"></script>
+    <script src="Classes/collision.js"></script>
     <!-- secondary sprites -->
     <script src="EnmSpr/enm1.js"></script>
     <script src="enmspr/enm2.js"></script>
-    <!-- related to collision  -->
-    <script src="Classes/collision.js"></script>
+    <!-- related to bounds  -->
     <script src="boundaries/top.js"></script>
     <script src="boundaries/left.js"></script>
     <script src="boundaries/right.js"></script>
@@ -50,8 +50,8 @@
                 b2 = new bound2(),
                 b3 = new bound3(),
                 b4 = new bound4(),
-                // test = new Arrow(),
-                nox = new Boost(),
+                // test = new boos(),
+                // nox = new Boost(),
                 //create a new acceleration object
                 acceleraton = new Accelerate(0),
                 //create a new instance of the collision detection class
@@ -72,7 +72,7 @@
             //function to handle keyboard events
             function KeyboardEventHandler(event) {
                 InitBullets(event) == true;
-                InitBoostz(event) == true;
+                // InitBoostz(event) == true;
                 //↑
                 if (event.keyCode == keycode.UP) {
                     
@@ -112,16 +112,16 @@
                 }
             }
 
-            function InitBoostz(event) {
-                // if the space bar is pressed
-                if (event.keyCode == keycode.W) {
-                    console.log("boost is pressed");
-                    // set the postion of the lasers relative the ship
-                    nox = new Boost(jet.X, jet.Y - 73);
-                    noz.add(nox);
-                    context.clearRect(0, 0, canvas.width, canvas.height);
-                }
-            }
+            // function InitBoostz(event) {
+            //     // if the space bar is pressed
+            //     if (event.keyCode == keycode.W) {
+            //         console.log("boost is pressed");
+            //         // set the postion of the lasers relative the ship
+            //         nox = new Boost(jet.X, jet.Y - 73);
+            //         // noz.add(nox);
+            //         context.clearRect(0, 0, canvas.width, canvas.height);
+            //     }
+            // }
 
 
                 function InitBullets(event) {
@@ -137,7 +137,7 @@
 
 
             var bulletz = new Collection();
-            var noz = new Collection();
+            // var noz = new Collection();
             // function for drawing the lasers
             function Drawbullets() {
                 var count = 0;
@@ -166,7 +166,7 @@
             //listener for keydown event
             window.addEventListener('keydown', KeyboardEventHandler, false);
             window.addEventListener('Keydown', InitBullets, false);
-            window.addEventListener('Keydown', InitBoostz, false);
+            // window.addEventListener('Keydown', InitBoostz, false);
             window.addEventListener('keyup', Stopjet, false);
             // window.addEventListener('keyup', KeyboardEventHandler, false);
             //need to add the sty.js 
@@ -193,7 +193,7 @@
                 b3.draw(context);
                 b4.draw(context);
                 //draws noz
-                nox.draw(context);
+                // nox.draw(context);
                 Drawbullets();
                 Movebullets();
 
@@ -223,12 +223,22 @@
                 // //set the angle of rotation for the arrow
                 // enem.Rotation = Math.atan2(dy, dx);
 
+                if (collision.Overlapping(jet, enem2)) {
+                    //halt the ship
+                    alert("collision")
+                    jet.halt()
+
+                }
+                if (collision.Overlapping(jet, enem)) {
+                    //halt the ship
+                    alert("collision")
+                    jet.halt()
+                }
                 if (collision.Overlapping(bulletz, enem)) {
                     //halt the ship
                     alert("collision")
-                    enem.halt()
+                    jet.halt()
                 }
-
 
             })();
         }
