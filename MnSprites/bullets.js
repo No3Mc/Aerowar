@@ -68,7 +68,7 @@
             //getter
             get: function () {
                 //return the y posn less the height
-                return this.y - 10;
+                return this.y - 55;
             }
         }
     )
@@ -79,7 +79,7 @@
             //getter
             get: function () {
                 //return the y posn plus the height
-                return this.y + 10;
+                return this.y + 55;
             }
         }
     )
