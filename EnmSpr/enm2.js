@@ -1,7 +1,7 @@
 ﻿//create the constructor for the class square
 function enemy2() {
         //initialisation code will go here
-        rightbounds = 1940;
+        right2bounds = 1940;
         disx = 100;
         disy = 200;
         enm2Color = '#B4BF0A';
@@ -104,7 +104,7 @@ function enemy2() {
                 this.y = disy;
                 // this.y = Math.random() * 600;
             }
-            if (this.x > rightbounds) {
+            if (this.x > right2bounds) {
                 this.x = disx;
                 this.y = disy;
                 // this.y = Math.random() * 600;
