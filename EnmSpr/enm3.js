@@ -5,7 +5,7 @@ function enemy3() {
     dis3x = 110;
     dis3y = 200;
     enm3Color = '#39177A';
-
+    bottom3bounds = 800;
     enem3speed = 3;
     // for collision
     topEdge = 10
@@ -98,7 +98,7 @@ function enemy3() {
     enemy3.prototype.move = function () {
 
         this.y += enem3speed;
-        if (this.y > 800) {
+        if (this.y > bottom3bounds) {
             this.x = dis3x;
             this.y = dis3y;
             // this.y = Math.random() * 600;
