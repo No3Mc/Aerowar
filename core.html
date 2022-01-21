@@ -21,14 +21,17 @@
     <script src="Classes/collision.js"></script>
     <!-- secondary sprites -->
     <script src="EnmSpr/enm1.js"></script>
-    <script src="enmspr/enm2.js"></script>
+    <script src="Enmspr/enm2.js"></script>
+    <script src="Enmspr/enm3.js"></script>
+    <!-- <script src="enmspr/enm3.js"></script>
+    <script src="enmspr/enm3.js"></script>
+    <script src="enmspr/enm3.js"></script> -->
     <!-- related to bounds  -->
     <script src="boundaries/top.js"></script>
     <script src="boundaries/left.js"></script>
     <script src="boundaries/right.js"></script>
     <script src="boundaries/bottom.js"></script>
-
-    <script src="enmspr/rep.js"></script>
+    <!-- Test -->
     <script src="classes/boost.js"></script>
 
 
@@ -41,17 +44,17 @@
                 context = canvas.getContext('2d'),
                 //new instance of the Mainspr class
                 jet = new Mainspr(),
+                bullet = new bullets(),
                 //enemies objects
                 enem = new enemy(),
                 enem2 = new enemy2(),
-                bullet = new bullets(),
+                enem3 = new enemy3(),
+                // enem3 = new enemy3(),
                 //bound objects
                 b1 = new bound1(),
                 b2 = new bound2(),
                 b3 = new bound3(),
                 b4 = new bound4(),
-                // test = new boos(),
-                // nox = new Boost(),
                 //create a new acceleration object
                 acceleraton = new Accelerate(0),
                 //create a new instance of the collision detection class
@@ -126,7 +129,6 @@
 
 
             var bulletz = new Collection();
-            // var noz = new Collection();
             // function for drawing the lasers
             function Drawbullets() {
                 var count = 0;
@@ -175,6 +177,8 @@
                 enem.draw(context);
                 //draws enem 2
                 enem2.draw(context);
+                enem3.draw(context);
+
                 //draw bounds
                 b1.draw(context);
                 b2.draw(context);
@@ -195,7 +199,7 @@
                 //moving enemy sprites
                 enem.move();
                 enem2.move();
-
+                enem3.move();
                 //acceleration
                 // jet.accelerate(acceleraton);
                 //get the next animation frame
