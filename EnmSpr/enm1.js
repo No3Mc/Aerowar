@@ -5,7 +5,7 @@ function enemy() {
     // this is the sprite going left
         //initialisation code will go here
          var rotation = 0;
-         enemspeed = 4;
+         enemspeed = 8;
          leftbound = 100;
 
         enmColor = "#FF5733";
@@ -17,7 +17,7 @@ function enemy() {
         LeftEdge = 10,
         // moving the sprite to that coords after if statement
          thisx = 1940;
-         thisy = 200;
+         thisy = 80;
         //create private variables for the x and y coordinates
         this.x = Math.random() * -1800;
         this.y = Math.random() * 400;

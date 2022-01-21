@@ -6,7 +6,7 @@ function enemy2() {
         disy = 80;
         enm2Color = '#B4BF0A';
 
-        enem2speed = 4;
+        enem2speed = 8;
         // for collision
         topEdge = 10
         bottemEdge = 10, 
