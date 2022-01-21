@@ -4,6 +4,14 @@ function enemy2() {
         rightbounds = 1940;
         disx = 100;
         disy = 200;
+
+
+
+        // for collision
+        topEdge = 10
+        bottemEdge = 10, 
+        rightEdge = 10,
+        LeftEdge = 10,
         //create private variables for the x and y coordinates
         this.x = Math.random() * -1800;
         this.y = Math.random() * 400;
@@ -18,11 +26,6 @@ function enemy2() {
             context.translate(this.x, this.y);
             //start the line (path)
             context.beginPath();
-        //     context.moveTo(-size, size);
-        //     context.lineTo(size, size);
-        //     context.lineTo(size, -size);
-        //     context.lineTo(size, -size);
-        //     context.lineTo(-size, -size);
 
 
 
@@ -118,49 +121,49 @@ function enemy2() {
 
 
 
-//create a public property called Top
-Object.defineProperty(this, 'Top',
-{
-    //getter
-    get: function () {
-        //return the y posn less the height
-        return this.y - 55;
-    }
-}
-)
+    //create a public property called Top
+    Object.defineProperty(this, 'Top',
+        {
+            //getter
+            get: function () {
+                //return the y posn less the height
+                return this.y - topEdge;
+            }
+        }
+    )
 
-//create a public property called Bottom
-Object.defineProperty(this, 'Bottom',
-{
-    //getter
-    get: function () {
-        //return the y posn plus the height
-        return this.y + 55;
-    }
-}
-)
+    //create a public property called Bottom
+    Object.defineProperty(this, 'Bottom',
+        {
+            //getter
+            get: function () {
+                //return the y posn plus the height
+                return this.y + bottemEdge;
+            }
+        }
+    )
 
-//create a public property called Left
-Object.defineProperty(this, 'Left',
-{
-    //getter
-    get: function () {
-        //return the x posn less the width
-        return this.x - 80;
-    }
-}
-)
+    //create a public property called Left
+    Object.defineProperty(this, 'Left',
+        {
+            //getter
+            get: function () {
+                //return the x posn less the width
+                return this.x - LeftEdge;
+            }
+        }
+    )
 
-//create a public property called Right
-Object.defineProperty(this, 'Right',
-{
-    //getter
-    get: function () {
-        //return the x posn plus the width
-        return this.x + 80;
-    }
-}
-)
+    //create a public property called Right
+    Object.defineProperty(this, 'Right',
+        {
+            //getter
+            get: function () {
+                //return the x posn plus the width
+                return this.x + rightEdge;
+            }
+        }
+    )
 
     }
     
