@@ -5,9 +5,9 @@ function enemy() {
     // this is the sprite going left
         //initialisation code will go here
          var rotation = 0;
-
+         enemspeed = 4;
          leftbound = 100;
-
+        // moving the sprite to that coords after if statement
          thisx = 1940;
          thisy = 200;
         //create private variables for the x and y coordinates
@@ -108,7 +108,7 @@ function enemy() {
     
         enemy.prototype.move = function () {
             //change the x axis
-            this.x -= 4;
+            this.x -= enemspeed;
             // this.y -= 4;
             if (this.x < leftbound) {
                 this.x = thisx;
