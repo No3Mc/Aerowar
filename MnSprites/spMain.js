@@ -39,11 +39,12 @@ function Mainspr() {
          //Starting point
         context.moveTo(0, -40);
         context.fillStyle = MainsprColor;//red one
+        // 1
         context.lineTo(-15, -25);
         context.lineTo(-15, -20);
         context.lineTo(-18, -20)
         context.lineTo(-50, -5)
-
+        // 2
         context.lineTo(-60, 10)
         context.lineTo(-40, 5)
         context.lineTo(-15, 12)
@@ -59,7 +60,7 @@ function Mainspr() {
         context.lineTo(-12, 25)
         context.lineTo(-10, 25)
         context.lineTo(-10, 26)
-        
+        // 3
         context.lineTo(0, 30)
         context.lineTo(10, 26)
         context.lineTo(10, 25)
@@ -76,7 +77,7 @@ function Mainspr() {
         context.lineTo(15, 12)
         context.lineTo(40, 5)
         context.lineTo(60, 10)
-
+        // 4
         context.lineTo(50, -5)
         context.lineTo(18, -20)
         context.lineTo(15, -20);
