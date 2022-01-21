@@ -3,10 +3,10 @@ function enemy3() {
     //initialisation code will go here
 
     dis3x = 110;
-    dis3y = 400;
+    dis3y = 200;
     enm3Color = '#39177A';
 
-    enem3speed = 4;
+    enem3speed = 3;
     // for collision
     topEdge = 10
     bottemEdge = 10, 
