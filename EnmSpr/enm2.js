@@ -3,7 +3,7 @@ function enemy2() {
         //initialisation code will go here
         right2bounds = 1940;
         disx = 100;
-        disy = 200;
+        disy = 80;
         enm2Color = '#B4BF0A';
 
         enem2speed = 4;
