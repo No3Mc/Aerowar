@@ -8,6 +8,8 @@ function enemy() {
          enemspeed = 4;
          leftbound = 100;
 
+        enmColor = "#FF5733";
+
         // for collision
         topEdge = 10
         bottemEdge = 10, 
@@ -25,7 +27,7 @@ function enemy() {
         enemy.prototype.draw = function (context) {
             //save the state of the drawing context before we change it
             context.save();
-            context.fillStyle = "#FF5733";//red one
+            context.fillStyle = enmColor;//red one
             //set the coordinates of the drawing area of the new shape to x and y
             context.translate(this.x, this.y);
             context.rotate(rotation);
