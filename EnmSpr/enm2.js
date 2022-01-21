@@ -4,7 +4,7 @@ function enemy2() {
         rightbounds = 1940;
         disx = 100;
         disy = 200;
-
+        enm2Color = '#B4BF0A';
 
         enem2speed = 4;
         // for collision
@@ -31,7 +31,7 @@ function enemy2() {
 
         context.moveTo(0, 40);
 
-        context.fillStyle = '#B4BF0A';//potty one
+        context.fillStyle = enm2Color;//potty one
 //2
         context.lineTo(-15, 25);
         context.lineTo(-15, 20);
