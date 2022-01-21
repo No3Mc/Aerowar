@@ -1,10 +1,12 @@
 ﻿function bullets(x, y) {
+    // x and y
     this.x = x;
     this.y = y;
     this.vx = 0;
     this.vy = 0;
+    // bullet moving speed
     bulletspeed = 15;
-    // for collision
+    // size for the collision to happen
     topEdge = 10
     bottemEdge = 10, 
     rightEdge = 10,
