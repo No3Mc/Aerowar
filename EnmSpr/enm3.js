@@ -1,12 +1,12 @@
 //create the constructor for the class square
 function enemy3() {
     //initialisation code will go here
-    rightbounds = 1940;
-    disEx = 120;
-    disEy = 300;
-    bottombounds = 600
-    enm3Color = '5279C8';
-    enem2speed = 4;
+
+    dis3x = 110;
+    dis3y = 400;
+    enm3Color = '#39177A';
+
+    enem3speed = 4;
     // for collision
     topEdge = 10
     bottemEdge = 10, 
@@ -97,25 +97,13 @@ function enemy3() {
 
     enemy3.prototype.move = function () {
 
-        this.y += enem2speed;
-        if (this.x < bottombounds) {
-            this.x = disEx;
-            this.y = disEy;
+        this.y += enem3speed;
+        if (this.y > 800) {
+            this.x = dis3x;
+            this.y = dis3y;
             // this.y = Math.random() * 600;
         }
-        if (this.x > rightbounds) {
-            this.x = disEx;
-            this.y = disEy;
-            // this.y = Math.random() * 600;
-        }
-        // if (this.y < 90) {
-        //     this.y = 800;
-        //     this.x = Math.random() * 600;
-        // }
-        // if (this.y > 830) {
-        //     this.y = 800;
-        //     this.x = Math.random() * 600;
-        // }
+
     }
 
 
