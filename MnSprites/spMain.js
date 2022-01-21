@@ -2,6 +2,8 @@
 // Constructor for Mainspr
 function Mainspr() {
     //initialisation
+    // color
+    MainsprColor = '#398443'
     // for edges
         topbound = 90,
         leftbound = 100,
@@ -17,12 +19,15 @@ function Mainspr() {
         this.y = 800;
         this.vx = 0;
         this.vy = 0;
-
-    //animation
+    // animation of globe
         GlobeYellow = 1,
+        globeXpos1 = 5;
+        globeYpos1 = 6;
+        globeXpos2 = 10;
+        globeYpos2 = 0;
+    // collision 
         Boom = false;
     //create the draw function to give us the draw method
-
     Mainspr.prototype.draw = function (context) {
         //save the state of the drawing context before we change it
         context.save();
@@ -32,7 +37,7 @@ function Mainspr() {
         context.beginPath();
          //Starting point
         context.moveTo(0, -40);
-        context.fillStyle = '#398443';//red one
+        context.fillStyle = MainsprColor;//red one
         context.lineTo(-15, -25);
         context.lineTo(-15, -20);
         context.lineTo(-18, -20)
@@ -141,7 +146,8 @@ function Mainspr() {
         //move to the position to start the globe
         context.moveTo(xposn, yposn);
         //draw the curve from that position to +30px passing toward x+13, y+20
-        context.quadraticCurveTo(xposn + 5, yposn + 6, xposn + 10, yposn + 0);
+        // Globe posistions defined above
+        context.quadraticCurveTo(xposn + globeXpos1, yposn + globeYpos1, xposn + globeXpos2, yposn + globeYpos2);
         //fill the globe
         context.fill();
         //draw the globe
