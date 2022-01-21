@@ -22,7 +22,7 @@ function Mainspr() {
         GlobeYellow = 1,
         Boom = false;
     //create the draw function to give us the draw method
-    //it accepts one parameter which is the context from the canvas it is drawn on
+
     Mainspr.prototype.draw = function (context) {
         //save the state of the drawing context before we change it
         context.save();
