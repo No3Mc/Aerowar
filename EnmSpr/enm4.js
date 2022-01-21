@@ -2,7 +2,7 @@
 function enemy4() {
     //initialisation code will go here
 
-    dis4x = 110;
+    dis4x = 510;
     dis4y = 200;
     enm4Color = '#39177A';
     bottom4bounds = 800;
