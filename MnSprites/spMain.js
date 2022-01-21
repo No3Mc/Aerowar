@@ -1,25 +1,25 @@
 ﻿
-//create the constructor for the class Mainspr
+// Constructor for Mainspr
 function Mainspr() {
-    //initialisation code will go here
-
-    //create private variables for the x and y coordinates
-    // var x = 950,//(left right) smaller the number, the closer to left bounds, and the larger, more closer to right bounds
-    //     y = 800, //(up down) smaller the number, the closer to bottom bounds, and the larger, more closer to upper bounds
-    //     vx = 0,
-    //     vy = 0,
+    //initialisation
+    // for edges
         topbound = 90,
         leftbound = 100,
         rightbound = 1940,
         bottombound = 830,
-        updwon = 30,
-        rightleft = 30,
+    // for collision
+        topEdge = 10
+        bottemEdge = 10, 
+        rightEdge = 10,
+        LeftEdge = 10,
+    // x and y
         this.x = 950;
         this.y = 800;
         this.vx = 0;
         this.vy = 0;
-        GlobeYellow = 1,
 
+    //animation
+        GlobeYellow = 1,
         Boom = false;
     //create the draw function to give us the draw method
     //it accepts one parameter which is the context from the canvas it is drawn on
@@ -247,7 +247,7 @@ function Mainspr() {
             //getter
             get: function () {
                 //return the y posn less the height
-                return this.y - 5;
+                return this.y - topEdge;
             }
         }
     )
@@ -258,7 +258,7 @@ function Mainspr() {
             //getter
             get: function () {
                 //return the y posn plus the height
-                return this.y + 10;
+                return this.y + bottemEdge;
             }
         }
     )
@@ -269,7 +269,7 @@ function Mainspr() {
             //getter
             get: function () {
                 //return the x posn less the width
-                return this.x - 20;
+                return this.x - LeftEdge;
             }
         }
     )
@@ -280,7 +280,7 @@ function Mainspr() {
             //getter
             get: function () {
                 //return the x posn plus the width
-                return this.x + 10;
+                return this.x + rightEdge;
             }
         }
     )
