@@ -6,7 +6,7 @@ function enemy2() {
         disy = 200;
 
 
-
+        enem2speed = 4;
         // for collision
         topEdge = 10
         bottemEdge = 10, 
@@ -98,7 +98,7 @@ function enemy2() {
         enemy2.prototype.move = function () {
             //change the x axis
         //     this.x -= 4;
-            this.x += 4;
+            this.x += enem2speed;
             if (this.x < 100) {
                 this.x = disx;
                 this.y = disy;
