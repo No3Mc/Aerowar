@@ -27,6 +27,7 @@ function Mainspr() {
         globeYpos2 = 0;
     // collision 
         Boom = false;
+        BoomImg = "boom.png";
     //create the draw function to give us the draw method
     Mainspr.prototype.draw = function (context) {
         //save the state of the drawing context before we change it
@@ -94,7 +95,7 @@ function Mainspr() {
             //create a new instance of an image
             var img = new Image();
             //get the bitmap source
-            img.src = "boom.png";
+            img.src = BoomImg;
             //draw the image on the context
             context.drawImage(img, -100, -60);
         }
