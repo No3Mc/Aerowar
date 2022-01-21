@@ -2,10 +2,10 @@
 function enemy3() {
     //initialisation code will go here
     rightbounds = 1940;
-    disx = 100;
-    disy = 200;
-
-
+    disEx = 120;
+    disEy = 300;
+    bottombounds = 600
+    enm3Color = '5279C8';
     enem2speed = 4;
     // for collision
     topEdge = 10
@@ -31,7 +31,7 @@ function enemy3() {
 
     context.moveTo(0, 40);
 
-    context.fillStyle = '#B4BF0A';//potty one
+    context.fillStyle = enm3Color;//potty one
 //2
     context.lineTo(-15, 25);
     context.lineTo(-15, 20);
@@ -96,17 +96,16 @@ function enemy3() {
     }
 
     enemy3.prototype.move = function () {
-        //change the x axis
-    //     this.x -= 4;
-        this.x += enem2speed;
-        if (this.x < 100) {
-            this.x = disx;
-            this.y = disy;
+
+        this.y += enem2speed;
+        if (this.x < bottombounds) {
+            this.x = disEx;
+            this.y = disEy;
             // this.y = Math.random() * 600;
         }
         if (this.x > rightbounds) {
-            this.x = disx;
-            this.y = disy;
+            this.x = disEx;
+            this.y = disEy;
             // this.y = Math.random() * 600;
         }
         // if (this.y < 90) {
