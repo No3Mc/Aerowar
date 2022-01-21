@@ -122,14 +122,10 @@ function Mainspr() {
             //otherwise set it to red
             colour = "#ff0000";
         }
-        //middle landing globe
-        // Globe(context, -14, 12, colour);
-        //right landing globe
-        // Globe(context, 49, 12, colour);
-        //left landing globe
-        Globe(context, -5, 0, colour);
+
+        Globe(context, -5, 0, colour); //center
         Globe(context, 50, 10, colour);//right
-        //left landing globe
+
         Globe(context, -60, 10, colour);//left
         //increase the value of globe yellow (The larger the increment the faster the flashing effect)
         GlobeYellow += 1;
