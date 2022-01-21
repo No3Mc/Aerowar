@@ -3,12 +3,13 @@
     this.y = y;
     this.vx = 0;
     this.vy = 0;
+    speed = 15;
+    // for collision
+    topEdge = 10
+    bottemEdge = 10, 
+    rightEdge = 10,
+    LeftEdge = 10,
 
-    //ship = new Rocket();
-    // change the y posn of the bullets relative to the rocket
-    //this.x = ship.RX;
-    // change the x posn of the bullets relative to the rocket
-    //this.y = ship.RY - 73;
 
     bullets.prototype.draw = function (context) {
         context.save();
@@ -25,7 +26,7 @@
     }
 
     bullets.prototype.move = function () {
-        this.y -= 3;
+        this.y -= speed;
     }
 
     bullets.prototype.setVector = function (vector) {
@@ -62,13 +63,14 @@
         }
     )
 
+
     //create a public property called Top
     Object.defineProperty(this, 'Top',
         {
             //getter
             get: function () {
                 //return the y posn less the height
-                return this.y - 55;
+                return this.y - topEdge;
             }
         }
     )
@@ -79,7 +81,7 @@
             //getter
             get: function () {
                 //return the y posn plus the height
-                return this.y + 55;
+                return this.y + bottemEdge;
             }
         }
     )
@@ -90,7 +92,7 @@
             //getter
             get: function () {
                 //return the x posn less the width
-                return this.x - 80;
+                return this.x - LeftEdge;
             }
         }
     )
@@ -101,7 +103,7 @@
             //getter
             get: function () {
                 //return the x posn plus the width
-                return this.x + 80;
+                return this.x + rightEdge;
             }
         }
     )
