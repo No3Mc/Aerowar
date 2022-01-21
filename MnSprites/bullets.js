@@ -3,7 +3,7 @@
     this.y = y;
     this.vx = 0;
     this.vy = 0;
-    speed = 15;
+    bulletspeed = 15;
     // for collision
     topEdge = 10
     bottemEdge = 10, 
@@ -26,7 +26,7 @@
     }
 
     bullets.prototype.move = function () {
-        this.y -= speed;
+        this.y -= bulletspeed;
     }
 
     bullets.prototype.setVector = function (vector) {
