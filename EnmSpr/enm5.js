@@ -1,8 +1,8 @@
 //create the constructor for the class square
-function enemy4() {
+function enemy5() {
     //initialisation code will go here
 
-    dis5x = 510;
+    dis5x = 1940;
     dis5y = 200;
     enm5Color = '#39177A';
     bottom5bounds = 800;
@@ -18,7 +18,7 @@ function enemy4() {
     //set the size of the star
     var size = 70;
 
-    enemy4.prototype.draw = function (context) {
+    enemy5.prototype.draw = function (context) {
         //save the state of the drawing context before we change it
         context.save();
 
@@ -95,7 +95,7 @@ function enemy4() {
         context.restore();
     }
 
-    enemy4.prototype.move = function () {
+    enemy5.prototype.move = function () {
 
         this.y += enem5speed;
         if (this.y > bottom5bounds) {
