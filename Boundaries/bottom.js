@@ -9,7 +9,7 @@ function bound4() {
         vx = 0,
         vy = 0,
         Boom = false;
-//
+
 
     //create the draw function to give us the draw method
     //it accepts one parameter which is the context from the canvas it is drawn on
