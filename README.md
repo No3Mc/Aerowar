@@ -11,7 +11,6 @@ At least one sprite must have its own internal animation e.g., flashing lights e
 Your code MUST be Object-Oriented in all respects, with classes that you have used from the sample code, and/or classes adapted from the sample code. 
 
 
-![Alt Text](![](https://giphy.com/clips/collin-arrested-development-exhausted-george-michael-bluth-B3JqtWuH0FjOXDnVSM))
 
 Sprite design 25%<br>
 **Requirements**<br>
