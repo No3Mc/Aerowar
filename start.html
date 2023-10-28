@@ -1,12 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>
-StartPage of the game
-        </title>
-        <!-- <link rel="stylesheet" href="corestyle.css" /> -->
-    </head>
-    <body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plane Game</title>
+    <style>
+        
+        body {
+            background-color: #333;
+            text-align: center;
+            padding: 100px;
+            overflow: hidden;
+        }
+        h1 {
+            color: white;
+            font-size: 36px;
+        }
+        button {
+            background-color: #0074cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0058a3;
+        }
+        
+        .plane {
+            position: absolute;
+            animation: fly 15s linear infinite; 
+        }
+        @keyframes fly {
+            0% {
+                transform: translate(-100px, -100px) rotate(45deg);
+            }
+            100% {
+                transform: translate(2000px, 2000px) rotate(45deg); 
+            }
+        }
+        @keyframes flyTop {
+            0% {
+                transform: translate(-100px, -100px) rotate(45deg);
+            }
+            100% {
+                transform: translate(2000px, 2000px) rotate(45deg); 
+            }
+        }
+        @keyframes flyLeft {
+            0% {
+                transform: translate(-100px, -100px) rotate(45deg);
+            }
+            100% {
+                transform: translate(2000px, 2000px) rotate(45deg); 
+            }
+        }
+        @keyframes flyRight {
+            0% {
+                transform: translate(-100px, -100px) rotate(45deg);
+            }
+            100% {
+                transform: translate(2000px, 2000px) rotate(45deg); 
+            }
+        }
+        @keyframes flyBottom {
+            0% {
+                transform: translate(-100px, -100px) rotate(45deg);
+            }
+            100% {
+                transform: translate(2000px, 2000px) rotate(45deg); 
+            }
+        }
+        .flag {
+            display: inline-block;
+            animation: waveFlag 2s ease-in-out infinite;
+        }
+
+        @keyframes waveFlag {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(10deg);
+            }
+            75% {
+                transform: rotate(-10deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <span class="flag">W</span>
+        <span class="flag">e</span>
+        <span class="flag">l</span>
+        <span class="flag">c</span>
+        <span class="flag">o</span>
+        <span class="flag">m</span>
+        <span class="flag">e</span>
+        &nbsp;to Aerowar
+    </h1>
+    <button onclick="startGame()">Start Game</button>
+
+    <script>
+        function startGame() {
+            window.location.href = "Core.html";
+        }
+
+        function spawnPlanes() {
+            setInterval(createRandomPlane, 1000); 
+        }
+
+        window.addEventListener('load', spawnPlanes);
+
+        function createRandomPlane() {
+            const plane = document.createElement("div");
+            plane.className = "plane";
+            const planeImage = document.createElement("img");
+            planeImage.src = "plane.png"; 
+            planeImage.alt = "Plane";
+            plane.appendChild(planeImage);
+
+            const randomX = Math.floor(Math.random() * window.innerWidth);
+            const randomY = Math.floor(Math.random() * window.innerHeight);
+            plane.style.left = randomX + "px";
+            plane.style.top = randomY + "px";
+
+            const directions = ["top", "left", "right", "bottom"];
+            const randomDirection = directions[Math.floor(Math.random() * directions.length)];
+
+            plane.style.animationName = "fly" + randomDirection.charAt(0).toUpperCase() + randomDirection.slice(1);
+
+            document.body.appendChild(plane);
+        }
+    </script>
 </body>
 </html>
